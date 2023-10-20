@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const startButton = document.getElementById("start-button");
   const resetButton = document.getElementById("reset-button");
+  const startOverButton = document.getElementById('start-over-button')
   const foundationNextButton = document.getElementById(
     "foundation-next-button"
   );
@@ -20,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // EVENT LISTENERS
 
   // For the Start Over button on Display Story
+  startOverButton.addEventListener("click", resetForm);
+  // For the reset button on the Age request page
   resetButton.addEventListener("click", resetForm);
   // For the Start button on Landing Page
   startButton.addEventListener("click", () => {
