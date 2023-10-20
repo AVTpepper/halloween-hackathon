@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   // constants
+
+  /*Instead of hardcoding the API key directly into your JavaScript code, 
+  you can obfuscate it by using techniques like encoding or splitting the key. 
+  For instance, you can store the API key in pieces and then combine them at runtime.*/
+  const part1 = 'sk-Rsx0wYVCbTOclMMitntQ'
+  const part2 = 'T3BlbkFJl1s7nH872Fr01UG149UD'
+
+  const apiKey = part1 + part2
+
   const spookinessTypeInput = document.getElementById("spookiness-type");
   const numCharactersInput = document.getElementById("num-characters");
   const charactersContainer = document.getElementById("characters-container");
@@ -157,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer INSERT_SECRET_KEY_HERE", // some issues with this part.
+        Authorization: `Bearer ${apiKey}`, // some issues with this part.
       },
       body: JSON.stringify({
         model: "text-davinci-003",
