@@ -1,74 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // constants
   const spookinessTypeInput = document.getElementById("spookiness-type");
   const numCharactersInput = document.getElementById("num-characters");
   const charactersContainer = document.getElementById("characters-container");
   const generateStoryButton = document.querySelector(
     "#generate-story .btn-primary"
   );
+  const startButton = document.getElementById("start-button");
+  const resetButton = document.getElementById("reset-button");
+  const foundationNextButton = document.getElementById(
+    "foundation-next-button"
+  );
+  const characterNextButton = document.getElementById("character-next-button");
+  const ageProceedButton = document.getElementById("age-proceed-button");
+  const noButton = document.getElementById("no-button");
+  const yesButton = document.getElementById("yes-button");
   const generatedStoryDiv = document.getElementById("generated-story");
 
+  // EVENT LISTENERS
+
   // For the Start Over button on Display Story
-  document.getElementById("reset-button").addEventListener("click", resetForm);
-
-  document.getElementById("start-button").addEventListener("click", () => {
-    goToSection("story-foundation");
-  });
-
+  resetButton.addEventListener("click", resetForm);
   // For the Start button on Landing Page
-  document.getElementById("start-button").addEventListener("click", () => {
+  startButton.addEventListener("click", () => {
     goToSection("story-foundation");
   });
-
   // For the Next button on Story Foundation
-  document
-    .getElementById("foundation-next-button")
-    .addEventListener("click", () => {
-      goToSection("character-generation");
-    });
-
+  foundationNextButton.addEventListener("click", () => {
+    goToSection("character-generation");
+  });
   // For the Next button on Character Generation
-  document
-    .getElementById("character-next-button")
-    .addEventListener("click", () => {
-      goToSection("age-verification");
-    });
-
+  characterNextButton.addEventListener("click", () => {
+    goToSection("age-verification");
+  });
   // For the Proceed button on Age Verification
-  document
-    .getElementById("age-proceed-button")
-    .addEventListener("click", () => {
-      goToSection("generate-story");
-    });
-
+  ageProceedButton.addEventListener("click", () => {
+    goToSection("generate-story");
+  });
   let userSelection = null; // this variable will store the user's choice
-
-  document.getElementById("no-button").addEventListener("click", function () {
+  noButton.addEventListener("click", function () {
     userSelection = "no";
   });
-
-  document.getElementById("yes-button").addEventListener("click", function () {
+  yesButton.addEventListener("click", function () {
     userSelection = "yes";
   });
 
-  document
-    .getElementById("age-proceed-button")
-    .addEventListener("click", () => {
-      const warningText = document.querySelector(
-        "#generate-story .warning-text"
-      );
+  ageProceedButton.addEventListener("click", () => {
+    const warningText = document.querySelector("#generate-story .warning-text");
 
-      if (userSelection === "no") {
-        warningText.textContent =
-          "Thank you for being honest! Here's a friendly tale just for you!";
-      } else if (userSelection === "yes") {
-        warningText.textContent =
-          "Dare you summon the tale from the depths of the unknown? Once revealed, its shadows might just cling to your very soul...";
-      }
+    if (userSelection === "no") {
+      warningText.textContent =
+        "Thank you for being honest! Here's a friendly tale just for you!";
+    } else if (userSelection === "yes") {
+      warningText.textContent =
+        "Dare you summon the tale from the depths of the unknown? Once revealed, its shadows might just cling to your very soul...";
+    }
 
-      goToSection("generate-story");
-    });
-
-  
+    goToSection("generate-story");
+  });
 
   function goToSection(sectionId) {
     document.querySelectorAll(".section").forEach((section) => {
@@ -155,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     prompt += "\n\nStory: ";
 
     const storyText = await generateStory(prompt);
-    
+
     generatedStoryDiv.innerText = storyText;
     goToSection("display-story");
   });
@@ -165,8 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer INSERT_SECRET_KEY_HERE", // some issues with this part.
+        Authorization: "Bearer INSERT_SECRET_KEY_HERE", // some issues with this part.
       },
       body: JSON.stringify({
         model: "text-davinci-003",
