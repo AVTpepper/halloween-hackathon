@@ -23,7 +23,7 @@ This is project created by a group of Code Institute students/alumna for the [Oc
 
 ### Agile Methodology
 
-Our team successfully implemented the Agile Methodology throughout the development process of the website. By employing Agile principles, we prioritized collaboration, adaptability, and iterative progress. We did this by regular meetings, continuous communication on slack and making use of the project board on Github with Epics, user stories and issues.
+Our team successfully implemented the Agile Methodology throughout the development process of the website. By employing Agile principles, we prioritized collaboration, adaptability, and iterative progress. We did this by regular meetings, continuous communication on Slack and making use of the project board on Github with Epics, user stories and issues.
 
 Our Github projects board during development:
 <p align="left"><img src="assets\images\github-projects.png" alt="Example of our Github projects board during development" width="500"/></p>
