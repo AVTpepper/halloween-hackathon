@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 
     <!-- Stylesheet for custom styles -->
+    <!-- Stylesheet for custom styles -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
@@ -16,7 +17,7 @@
     <div id="bg-image" class="d-flex justify-content-center align-items-center min-vh-100">
         <div class="col-10 col-md-9 col-lg-6 m-4">
             <div id="container" class="rounded bg-purple">
-                <h2 class="text-center mb-4">Spooky Story</h2>
+                <h2 class="text-center mt-3 mb-2">Spooky Story</h2>
                 <div class="squared-circle text-center mb-4">
                     <h2>Creation</h2>
                 </div>
@@ -60,10 +61,40 @@
                         <button id="foundation-next-button" class="btn btn-primary">Next</button>
                     </div>
                 </div>
+                <!-- Story Foundation -->
+                <div id="story-foundation" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
+                    <div class="squared-circle text-center mb-4">Story Foundation</div>
+                    <div class="row mb-4">
+                        <div class="col-12 mb-4">
+                            <div class="form-group">
+                                <label for="spookiness-type">Type of Spookiness</label>
+                                <select id="spookiness-type" class="form-control">
+                                    <option>Comedy Horror</option>
+                                    <option>Horror</option>
+                                    <option>Thriller</option>
+                                    <option>Romantic Horror</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="num-characters">Number of Characters</label>
+                                <select id="num-characters" class="form-control">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mb-4">
+                        <button id="foundation-next-button" class="btn btn-primary">Next</button>
+                    </div>
+                </div>
 
                 <!-- Character Generation -->
                 <div id="character-generation" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
-                    <div class="squared-circle text-center m-4">Character Generation</div>
+                    <div class="squared-circle text-center m-4 mb-1">Character Generation</div>
                     <div class="row mb-4 justify-content-center">
 
                         <div class="form-group">
@@ -100,9 +131,31 @@
                         </div>
                     </div>
                 </div>
+                <!-- Age Verification -->
+                <div id="age-verification" class="section d-none mb-4">
+
+                    <div class="row mb-4 justify-content-center">
+                        <div class="col-md-6 mb-4">
+                            <div class="text-center mb-4">
+                                <p>Are you older than 18?</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 text-center">
+                                <button id="yes-button" class="p-3 btn btn-secondary">Yes</button>
+                                <button id="no-button" class=" p-3 btn btn-danger">No</button>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 text-center">
+                                <button id="age-proceed-button" class="btn btn-primary">Proceed</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Generate Story -->
-                <div id="generate-story" class="section d-none mb-4">
+                <div id="generate-story" class="section col-lg-6 mx-auto d-none mb-4">
                     <p class="text-center warning-text mb-4">Dare you summon the tale from the depths of the
                         unknown?
                         Once
@@ -113,6 +166,20 @@
                     </div>
                 </div>
 
+                <!-- Display Story -->
+                <div id="display-story" class="section d-none">
+                    <div class="squared-circle text-center mb-3">
+                        <h3 class="mb-0">Your Spooky Story</h3>
+                    </div>
+                    <div id="generated-story" class="story-output mt-1 mb-3 px-4"></div>
+                    <div class="text-center">
+                        <button id="start-over-button" class="btn btn-secondary mb-4">Start Over</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
                 <!-- Display Story -->
                 <div id="display-story" class="section d-none">
                     <div class="squared-circle text-center mb-3">
