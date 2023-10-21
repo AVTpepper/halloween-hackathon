@@ -55,9 +55,13 @@ A project created by a group of Code Institute students for the October Hallowee
 
 ## Technologies used
 
-### Languages
+### Languages & Frameworks & Tools
 
-### Frameworks & Tools
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+
 
 ## Deployment
 
