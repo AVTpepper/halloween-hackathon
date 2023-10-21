@@ -15,8 +15,10 @@ Link to live website: [TODO: ENTER PROJECT NAME](https://avtpepper.github.io/hal
 
 ## Introduction
 
+TODO: Enter PROJECT NAME HERE 
+is an website that generates scary stories with OpenAI. Stories are tailored to the the users preferred specifications. 
 
-A project created by a group of Code Institute students for the October Halloween Hackathon.
+This is project created by a group of Code Institute students/alumna for the [October Halloween Hackathon](https://hackathon.codeinstitute.net/hackathon/38/).
 
 ### Agile Methodology
 
@@ -65,6 +67,7 @@ Our team successfully implemented the Agile Methodology throughout the developme
 - CSS
 - JavaScript
 - Bootstrap
+- OpenAI
 
 
 ## Deployment
