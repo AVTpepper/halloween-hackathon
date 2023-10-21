@@ -13,17 +13,20 @@
 body {
     background-image: url('../images/halloween-2837936_1920.png');
     height: 100vh;
+    width: 100vw;
     color: #fd9702;
     font-family: 'Arvo', sans-serif;
 }
 
+/* Header styles */
 h2 {
     font-family: 'Creepster', sans-serif;
 }
 
 #container{
-    background-color: rgba(174,3,255, 0.8); /* Adjust the color and alpha (0.7) as needed */
-    padding: 20px; /* Add padding to improve visibility */
+    background-color: rgba(174,3,255, 0.5); /* Adjust the color and alpha (0.7) as needed */
+    padding: 10px; /* Add padding to improve visibility */
+    margin: 40px;
     animation-name: hero-zoom;
     animation-duration: 5s;
     animation-fill-mode: forwards;
