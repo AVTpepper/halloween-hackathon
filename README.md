@@ -1,8 +1,8 @@
-# TODO: Project name HERE<br>Halloween hackathon
+# **The Spookies**<br>Spooky story creation
 
 TODO: Add amiresponsive img
 
-Link to live website: [TODO: ENTER PROJECT NAME](https://avtpepper.github.io/halloween-hackathon/)
+Link to live website: [Spooky story creation](https://avtpepper.github.io/halloween-hackathon/)
 
 <hr>
 
@@ -15,7 +15,7 @@ Link to live website: [TODO: ENTER PROJECT NAME](https://avtpepper.github.io/hal
 
 ## Introduction
 
-TODO: Enter PROJECT NAME HERE 
+**Spooky story creation**
 is an website that generates scary stories with OpenAI. Stories are tailored to the the users preferred specifications. 
 
 This is project created by a group of Code Institute students/alumna for the [October Halloween Hackathon](https://hackathon.codeinstitute.net/hackathon/38/).
@@ -24,21 +24,34 @@ This is project created by a group of Code Institute students/alumna for the [Oc
 
 Our team successfully implemented the Agile Methodology throughout the development process of the website. By employing Agile principles, we prioritized collaboration, adaptability, and iterative progress. We did this by regular meetings, continuous communication on slack and making use of the project board on Github with Epics, user stories and issues.
 
+Our Github projects board during development:
+<p align="left"><img src="assets\images\github-projects.png" alt="Example of our Github projects board during development" width="500"/></p>
+
 ### UX / UI
 
-
+Designed to immerse the user in a spooky environment with visual effects and sounds.
 
 
 ## Features
 
-
-
+### Introduction animation
+To immediatly set the appropriate tone, user is introduced to the website with spooky animations. Starting with smooth calm transitions to lure the user into a false sense of security and then followed by a startling surprise.
 
 ### Introduction page
 
+The introduction page is where User introduced to the story creator and can begin their journey.
+
 ### User choices
 
+User has multiple options to choose from along the way that affects the generated story.
+
 ### Generate story
+
+After all decisions have been made a story is generated, it is displayed with animations and sound for a great reading experience.
+
+### About us page
+
+Here user is thanked for visit the page and get to meet the creators.
 
 
 ## Features left to implement
@@ -104,7 +117,7 @@ Link to live website: [TODO: ENTER PROJECT NAME](https://avtpepper.github.io/hal
 
 ### Tutorials
 
-Audio element styling inspired on: [Link to blog](https://blog.shahednasser.com/how-to-style-an-audio-element/) 
+Audio element styling inspired from: [Shahed Nasser's blog](https://blog.shahednasser.com/how-to-style-an-audio-element/) 
 
 ### Media
 
