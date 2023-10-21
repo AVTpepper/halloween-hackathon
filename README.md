@@ -1,6 +1,7 @@
 # **The Spookies**<br>Spooky story creation
 
 TODO: Add amiresponsive img
+![Amiresponsive image]()
 
 Link to live website: [Spooky story creation](https://avtpepper.github.io/halloween-hackathon/)
 
@@ -78,15 +79,16 @@ Here user is thanked for visit the page and get to meet the creators.
 | Feature tested | Expected outcome | Testing Performed | Result | Pass / fail | 
 | --- | --- | --- | --- | --- |
 | **Introduction screen** |
-| Feature | Outcome | Test | Result |  |
+| Introduction animation | Show animations | Load page |  |  |
+| Introduction screen | Display introduction screen | Load page and wait for animations to finish |  |  |
 | **Story creation** |
-| Feature | Outcome | Test | Result |  |
+| User choices | Story changes based on user input | Make choices and generate story |  |  |
 | **Story screen** |
-| Feature | Outcome | Test | Result |  |
-| **The footer** |
-| Feature | Outcome | Test | Result |  |
-| **The header** |
-| Feature | Outcome | Test | Result |  |
+| Generate story | A story is generated | Click on "Generate story" |  |  |
+| Story anymation | Display story slowly and play sounds | Click on "Generate story" and wait |  |  |
+| **About us page** |
+| About us | Option to display about us page after story is finished | Wait for story to finish and click on "About us" |  |  |
+
 
 ## Bugs
 
@@ -116,7 +118,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 - Under Branch, select main in the dropdown menu and click save
 - Once the main branch has been selected and saved, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-Link to live website: [TODO: ENTER PROJECT NAME](https://avtpepper.github.io/halloween-hackathon/)
+Link to live website: [Spooky story creation](https://avtpepper.github.io/halloween-hackathon/)
 
 ## Contributors
 
