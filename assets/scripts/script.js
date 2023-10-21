@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Opening sequece transitions
   window.setTimeout(transformBackground, 100);
   // window.setTimeout(showHeading, 1500);
-  window.setTimeout(showContainer, 1500);
+  window.setTimeout(showContainer, 1000);
   // window.setTimeout(showSurpriceElement, 4000);
 
 
