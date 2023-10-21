@@ -27,6 +27,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const yesButton = document.getElementById("yes-button");
   const generatedStoryDiv = document.getElementById("generated-story");
 
+
+  // Opening sequece transitions
+  window.setTimeout(transformBackground, 100);
+  // window.setTimeout(showHeading, 1500);
+  window.setTimeout(showContainer, 1000);
+  // window.setTimeout(showSurpriceElement, 4000);
+
+
+  function transformBackground() {
+    document.getElementById('bg-image').style.backgroundSize = '120%';
+  }
+
+  // function showHeading() {
+  //   document.getElementById('heading').style.opacity = '1';
+  // }
+  
+  function showContainer() {
+    document.getElementById('container').style.opacity = '1';
+  }
+  
+  // function showSurpriceElement() {
+  //   const pumpkins = document.getElementsByClassName('pumpkins');
+  //   for (let pumpkin of pumpkins) {
+  //     pumpkin.style.opacity = '1';
+  // }
+
+
+
   // EVENT LISTENERS
 
   // For the Start Over button on Display Story
@@ -149,9 +177,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let prompt = `Create a short story in the ${spookinessType} genre. `;
     prompt += `The story should have ${numCharacters} main character(s): `;
     characters.forEach((char, index) => {
-      prompt += `${char.name} (${char.sex})${
-        index === characters.length - 1 ? "." : ", "
-      }`;
+      prompt += `${char.name} (${char.sex})${index === characters.length - 1 ? "." : ", "
+        }`;
     });
     prompt += "\n\nStory: ";
 

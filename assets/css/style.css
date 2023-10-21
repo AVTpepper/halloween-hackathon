@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Creepster&display=swap');
 
+/* --------------------------
+--------- Animations --------
+-------------------------- */
+
 @keyframes hero-zoom {
     from {
         transform: scale(0.5);
@@ -9,6 +13,10 @@
         transform: scale(1);
     }
 }
+
+/* --------------------------
+------- Global styles -------
+-------------------------- */
 
 body {
     background-image: url('../images/halloween-2837936_1920.png');
@@ -21,7 +29,20 @@ h2 {
     font-family: 'Creepster', sans-serif;
 }
 
-#container{
+
+/* --------------------------
+------- Layout styles -------
+-------------------------- */
+
+#bg-image {
+  background-image: url('../images/halloween-2837936_1920.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;  
+  transition: background-size 1.8s;
+}
+
+#container {
     background-color: rgba(174,3,255, 0.5); /* Adjust the color and alpha (0.7) as needed */
     padding: 10px; /* Add padding to improve visibility */
     margin: 40px;
@@ -29,9 +50,15 @@ h2 {
     animation-duration: 5s;
     animation-fill-mode: forwards;
     min-height: 400px;
+    opacity: 0;
+    transition: opacity 2s;
 }
 
-/* Button styles */
+
+/* --------------------------
+---------- Buttons ----------
+-------------------------- */
+
 .btn {
     background-color: #ff6600;
     border-color: #ff6600;
