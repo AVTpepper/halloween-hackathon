@@ -43,12 +43,25 @@ Our team successfully implemented the Agile Methodology throughout the developme
 
 ## Features left to implement
 
-
+- Having the choice to read story with TTS (text to speech) for users with disabilities.
 
 
 ## How the app works
 
 ## Testing
+
+| Feature tested | Expected outcome | Testing Performed | Result | Pass / fail | 
+| --- | --- | --- | --- | --- |
+| **Introduction screen** |
+| Feature | Outcome | Test | Result |  |
+| **Story creation** |
+| Feature | Outcome | Test | Result |  |
+| **Story screen** |
+| Feature | Outcome | Test | Result |  |
+| **The footer** |
+| Feature | Outcome | Test | Result |  |
+| **The header** |
+| Feature | Outcome | Test | Result |  |
 
 ## Bugs
 
