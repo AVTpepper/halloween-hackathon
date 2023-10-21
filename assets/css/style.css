@@ -69,49 +69,60 @@ audio::-webkit-media-controls-time-remaining-display {
 } */
 
 #container {
-    background-color: rgba(174, 3, 255, 0.5);
+    background-color: rgba(9, 7, 10, 0.5);
     /* Adjust the color and alpha (0.7) as needed */
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     /* Add padding to improve visibility */
     /* margin: 40px; */
     animation-name: hero-zoom;
     animation-duration: 5s;
     animation-fill-mode: forwards;
     min-height: 400px;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 2s;
 }
 
+.borders {
+    border: solid 5px;
+    border-top-left-radius: 50% 15% !important;
+    border-top-right-radius: 50% 15% !important;
+    box-shadow: 5px 5px 59px orange;
+}
 
+#header-seperator {
+    height: 0.3rem;
+    opacity: 1;
+}
 /* --------------------------
 ---------- Buttons ----------
 -------------------------- */
 
-.btn {
+.btn, #reset-button {
     background-color: #ff6600;
     border-color: #ff6600;
     color: #000;
 }
 
 /* Button hover effect */
-.btn:hover {
-    background-color: #ff8c1a;
-    border-color: #ff8c1a;
+.btn:hover, #reset-button:hover {
+    background-color:  rgba(9, 7, 10, 0.5);
+    border-color: #000;
+    color: rgb(255, 102, 0);
+    box-shadow: 0px 0px 20px orange;
 }
+
+
 
 /* Age Verification button styles */
 #yes-button {
-    background-color: #00cc00;
+    background-color: rgb(255, 102, 0, 0.2);
 }
 
 #no-button {
-    background-color: #cc0000;
+    background-color: rgb(255, 102, 0, 0.3);
 }
 
-/* Reset button styles */
-#reset-button {
-    background-color: #6600cc;
-}
 
 /* Media queries */
 
@@ -121,3 +132,13 @@ audio::-webkit-media-controls-time-remaining-display {
         background: url('../images/moon-outdoors-pumpkin.webp') bottom right fixed;
     }
 }
+
+/* Style specifically for the audio buttons */
+.audio-btn {
+    margin-right: 10px;
+}
+
+/* Style for the volume slider, if needed */
+/* .audio-volume-slider { */
+    /* Add any specific styles for the volume slider here */
+/* } */
