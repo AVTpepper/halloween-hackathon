@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // function showHeading() {
   //   document.getElementById('heading').style.opacity = '1';
   // }
-  
+
   function showContainer() {
     document.getElementById("container").style.opacity = "1";
     document.getElementById("container").style.opacity = "1";
@@ -217,88 +217,89 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-//   const audio = document.getElementById("myAudio");
-//   const playPauseBtn = document.getElementById("playPauseBtn");
-//   const playPauseIcon = document.getElementById("playPauseIcon");
-//   const muteBtn = document.getElementById("muteBtn");
-//   const volumeIcon = document.getElementById("volumeIcon");
-//   const volumeSlider = document.getElementById("volumeSlider");
+  //   const audio = document.getElementById("myAudio");
+  //   const playPauseBtn = document.getElementById("playPauseBtn");
+  //   const playPauseIcon = document.getElementById("playPauseIcon");
+  //   const muteBtn = document.getElementById("muteBtn");
+  //   const volumeIcon = document.getElementById("volumeIcon");
+  //   const volumeSlider = document.getElementById("volumeSlider");
 
-//   playPauseBtn.addEventListener("click", () => {
-//     if (audio.paused) {
-//       audio.play();
-//       playPauseIcon.className = "fas fa-pause"; // Change to pause icon
-//     } else {
-//       audio.pause();
-//       playPauseIcon.className = "fas fa-play"; // Change back to play icon
-//     }
-//   });
+  //   playPauseBtn.addEventListener("click", () => {
+  //     if (audio.paused) {
+  //       audio.play();
+  //       playPauseIcon.className = "fas fa-pause"; // Change to pause icon
+  //     } else {
+  //       audio.pause();
+  //       playPauseIcon.className = "fas fa-play"; // Change back to play icon
+  //     }
+  //   });
 
-//   muteBtn.addEventListener("click", () => {
-//     if (audio.muted) {
-//       audio.muted = false;
-//       volumeIcon.className = "fas fa-volume-up"; // Change to volume icon
-//     } else {
-//       audio.muted = true;
-//       volumeIcon.className = "fas fa-volume-mute"; // Change to mute icon
-//     }
-//   });
+  //   muteBtn.addEventListener("click", () => {
+  //     if (audio.muted) {
+  //       audio.muted = false;
+  //       volumeIcon.className = "fas fa-volume-up"; // Change to volume icon
+  //     } else {
+  //       audio.muted = true;
+  //       volumeIcon.className = "fas fa-volume-mute"; // Change to mute icon
+  //     }
+  //   });
 
-//   volumeSlider.addEventListener("input", (event) => {
-//     audio.volume = event.target.value;
+  //   volumeSlider.addEventListener("input", (event) => {
+  //     audio.volume = event.target.value;
 
-//     // Adjust icon based on volume level
-//     if (audio.volume === 0 || audio.muted) {
-//       volumeIcon.className = "fas fa-volume-mute";
-//     } else {
-//       volumeIcon.className = "fas fa-volume-up";
-//     }
-//   });
+  //     // Adjust icon based on volume level
+  //     if (audio.volume === 0 || audio.muted) {
+  //       volumeIcon.className = "fas fa-volume-mute";
+  //     } else {
+  //       volumeIcon.className = "fas fa-volume-up";
+  //     }
+  //   });
 
-//   // Volume control
-//   volumeSlider.addEventListener("input", function () {
-//     audioElement.volume = volumeSlider.value;
-//   });
+  //   // Volume control
+  //   volumeSlider.addEventListener("input", function () {
+  //     audioElement.volume = volumeSlider.value;
+  //   });
 
-//   // Handle autoplay and loop attributes
-//   if (audioElement.hasAttribute("autoplay")) {
-//     audioElement.play();
-//   }
-//   if (!audioElement.hasAttribute("loop")) {
-//     audioElement.removeAttribute("loop");
-//   }
-// });
+  //   // Handle autoplay and loop attributes
+  //   if (audioElement.hasAttribute("autoplay")) {
+  //     audioElement.play();
+  //   }
+  //   if (!audioElement.hasAttribute("loop")) {
+  //     audioElement.removeAttribute("loop");
+  //   }
+  // });
 
-// type effect for story generation
+  // type effect for story generation
 
-function typeEffect(element, text, delay = 100) {
-  let i = 0;
-  const typingSound = document.getElementById("typing-sound");
+  function typeEffect(element, text, delay = 100) {
+    let i = 0;
+    const typingSound = document.getElementById("typing-sound");
 
-  // Play the audio when typing starts
-  typingSound.play();
+    // Play the audio when typing starts
+    typingSound.play();
 
-  const typingInterval = setInterval(function () {
-    if (i < text.length) {
-      // Handle consecutive newlines as a new paragraph
-      if (text.substring(i, i + 2) === "\n\n") {
-        element.innerHTML += "<br><br>";
-        i += 2; // Increment by 2 to skip both newline characters
-      }
-      // Handle single newlines as a line break
-      else if (text.charAt(i) === "\n") {
-        element.innerHTML += "<br>";
-        i++;
+    const typingInterval = setInterval(function () {
+      if (i < text.length) {
+        // Handle consecutive newlines as a new paragraph
+        if (text.substring(i, i + 2) === "\n\n") {
+          element.innerHTML += "<br><br>";
+          i += 2; // Increment by 2 to skip both newline characters
+        }
+        // Handle single newlines as a line break
+        else if (text.charAt(i) === "\n") {
+          element.innerHTML += "<br>";
+          i++;
+        } else {
+          element.innerHTML += text.charAt(i);
+          i++;
+        }
       } else {
-        element.innerHTML += text.charAt(i);
-        i++;
+        clearInterval(typingInterval); // Stop the interval when all characters are displayed
+        typingSound.pause(); // Pause the audio
+        typingSound.currentTime = 0; // Reset audio to start
       }
-    } else {
-      clearInterval(typingInterval); // Stop the interval when all characters are displayed
-      typingSound.pause(); // Pause the audio
-      typingSound.currentTime = 0; // Reset audio to start
-    }
-  }, delay);
-}
+    }, delay);
+  }
 
-typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
+  typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
+});
