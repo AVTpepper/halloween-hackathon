@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function transformBackground() {
     document.getElementById("bg-image").style.backgroundSize = "120%";
+    document.getElementById("bg-image").style.backgroundSize = "120%";
   }
 
   // function showHeading() {
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // }
 
   function showContainer() {
+    document.getElementById("container").style.opacity = "1";
     document.getElementById("container").style.opacity = "1";
   }
 
@@ -159,11 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
     createCharacterInputs(numCharactersInput.value);
   });
 
-
   generateStoryButton.addEventListener("click", () => {
     generatedStoryDiv.innerHTML =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-      goToSection('display-story');
+    goToSection("display-story");
   });
   // generateStoryButton.addEventListener("click", async () => {
   //   const spookinessType = spookinessTypeInput.value;
@@ -215,38 +216,90 @@ document.addEventListener("DOMContentLoaded", () => {
       return "An error occurred while generating the story. Please try again.";
     }
   }
-});
 
-// type effect for story generation
+  //   const audio = document.getElementById("myAudio");
+  //   const playPauseBtn = document.getElementById("playPauseBtn");
+  //   const playPauseIcon = document.getElementById("playPauseIcon");
+  //   const muteBtn = document.getElementById("muteBtn");
+  //   const volumeIcon = document.getElementById("volumeIcon");
+  //   const volumeSlider = document.getElementById("volumeSlider");
 
-function typeEffect(element, text, delay = 100) {
-  let i = 0;
-  const typingSound = document.getElementById("typing-sound");
-  
-  // Play the audio when typing starts
-  typingSound.play();
+  //   playPauseBtn.addEventListener("click", () => {
+  //     if (audio.paused) {
+  //       audio.play();
+  //       playPauseIcon.className = "fas fa-pause"; // Change to pause icon
+  //     } else {
+  //       audio.pause();
+  //       playPauseIcon.className = "fas fa-play"; // Change back to play icon
+  //     }
+  //   });
 
-  const typingInterval = setInterval(function() {
+  //   muteBtn.addEventListener("click", () => {
+  //     if (audio.muted) {
+  //       audio.muted = false;
+  //       volumeIcon.className = "fas fa-volume-up"; // Change to volume icon
+  //     } else {
+  //       audio.muted = true;
+  //       volumeIcon.className = "fas fa-volume-mute"; // Change to mute icon
+  //     }
+  //   });
+
+  //   volumeSlider.addEventListener("input", (event) => {
+  //     audio.volume = event.target.value;
+
+  //     // Adjust icon based on volume level
+  //     if (audio.volume === 0 || audio.muted) {
+  //       volumeIcon.className = "fas fa-volume-mute";
+  //     } else {
+  //       volumeIcon.className = "fas fa-volume-up";
+  //     }
+  //   });
+
+  //   // Volume control
+  //   volumeSlider.addEventListener("input", function () {
+  //     audioElement.volume = volumeSlider.value;
+  //   });
+
+  //   // Handle autoplay and loop attributes
+  //   if (audioElement.hasAttribute("autoplay")) {
+  //     audioElement.play();
+  //   }
+  //   if (!audioElement.hasAttribute("loop")) {
+  //     audioElement.removeAttribute("loop");
+  //   }
+  // });
+
+  // type effect for story generation
+
+  function typeEffect(element, text, delay = 100) {
+    let i = 0;
+    const typingSound = document.getElementById("typing-sound");
+
+    // Play the audio when typing starts
+    typingSound.play();
+
+    const typingInterval = setInterval(function () {
       if (i < text.length) {
-          // Handle consecutive newlines as a new paragraph
-          if (text.substring(i, i + 2) === "\n\n") {
-              element.innerHTML += "<br><br>";
-              i += 2; // Increment by 2 to skip both newline characters
-          }
-          // Handle single newlines as a line break
-          else if (text.charAt(i) === "\n") {
-              element.innerHTML += "<br>";
-              i++;
-          } else {
-              element.innerHTML += text.charAt(i);
-              i++;
-          }
+        // Handle consecutive newlines as a new paragraph
+        if (text.substring(i, i + 2) === "\n\n") {
+          element.innerHTML += "<br><br>";
+          i += 2; // Increment by 2 to skip both newline characters
+        }
+        // Handle single newlines as a line break
+        else if (text.charAt(i) === "\n") {
+          element.innerHTML += "<br>";
+          i++;
+        } else {
+          element.innerHTML += text.charAt(i);
+          i++;
+        }
       } else {
-          clearInterval(typingInterval);  // Stop the interval when all characters are displayed
-          typingSound.pause(); // Pause the audio
-          typingSound.currentTime = 0; // Reset audio to start
+        clearInterval(typingInterval); // Stop the interval when all characters are displayed
+        typingSound.pause(); // Pause the audio
+        typingSound.currentTime = 0; // Reset audio to start
       }
-  }, delay);
-}
+    }, delay);
+  }
 
-typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
+  typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
+});
