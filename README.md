@@ -61,7 +61,20 @@ A project created by a group of Code Institute students for the October Hallowee
 
 ## Deployment
 
+
+
+## Contributors
+
+- Alex [AVTpepper](https://github.com/AVTpepper)
+- Sara [sbojorge](https://github.com/sbojorge)
+- Samuel [FullstackSammy](https://github.com/FullstackSammy)
+- Niclas [NiclO1337](https://github.com/NiclO1337)
+
 ## Credits
+
+### Tutorials
+
+Audio element styling inspired on: [Link to blog](https://blog.shahednasser.com/how-to-style-an-audio-element/) 
 
 ### Media
 
@@ -69,9 +82,3 @@ A project created by a group of Code Institute students for the October Hallowee
 
 
 #### Audio
-
-
-### Tutorials
-
-
-## Contributors
