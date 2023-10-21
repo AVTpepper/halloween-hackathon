@@ -40,17 +40,21 @@ h2 {
 #bg-image {
   background-image: url('../images/halloween-2837936_1920.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center center;
+  height: 100vh;
+  transition: background-size 1.8s;
 }
 
-#container{
+#container {
     background-color: rgba(174,3,255, 0.5); /* Adjust the color and alpha (0.7) as needed */
     padding: 10px; /* Add padding to improve visibility */
     margin: 40px;
     animation-name: hero-zoom;
     animation-duration: 5s;
     animation-fill-mode: forwards;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 
