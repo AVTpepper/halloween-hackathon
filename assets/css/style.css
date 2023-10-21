@@ -1,3 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Creepster&display=swap');
+
+@keyframes hero-zoom {
+    from {
+        transform: scale(0.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+body {
+    background-image: url('../images/halloween-2837936_1920.png');
+    height: 100vh;
+    width: 100vw;
+    color: #fd9702;
+    font-family: 'Arvo', sans-serif;
+}
+
+/* Header styles */
+h2 {
+    font-family: 'Creepster', sans-serif;
+}
+
+#container{
+    background-color: rgba(174,3,255, 0.5); /* Adjust the color and alpha (0.7) as needed */
+    padding: 10px; /* Add padding to improve visibility */
+    margin: 40px;
+    animation-name: hero-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+/* Button styles */
+.btn {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    color: #000;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #ff8c1a;
+    border-color: #ff8c1a;
+}
+
+/* Age Verification button styles */
+#yes-button {
+    background-color: #00cc00;
+}
+
+#no-button {
+    background-color: #cc0000;
+}
+
+/* Reset button styles */
+#reset-button {
+    background-color: #6600cc;
+}
+=======
 /* General styles */
 
 * /* wild card selector for overriding standard browser styles */

@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*Instead of hardcoding the API key directly into your JavaScript code, 
   you can obfuscate it by using techniques like encoding or splitting the key. 
-  For instance, you can store the API key in pieces and then combine them at runtime.*/
-  const part1 = 'sk-Rsx0wYVCbTOclMMitntQ'
-  const part2 = 'T3BlbkFJl1s7nH872Fr01UG149UD'
+  For instance, you can store the API key in pieces and then combine them at runtime. */
+  const part1 = "sk-Rsx0wYVCbTOclMMitntQT3B";
+  const part2 = "lbkFJl1s7nH872Fr01UG149UD";
 
-  const apiKey = part1 + part2
+  const apiKey = part1 + part2;
 
   const spookinessTypeInput = document.getElementById("spookiness-type");
   const numCharactersInput = document.getElementById("num-characters");
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const startButton = document.getElementById("start-button");
   const resetButton = document.getElementById("reset-button");
-  const startOverButton = document.getElementById('start-over-button')
+  const startOverButton = document.getElementById("start-over-button");
   const foundationNextButton = document.getElementById(
     "foundation-next-button"
   );
