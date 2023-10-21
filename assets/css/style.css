@@ -41,8 +41,7 @@ h2 {
   background-image: url('../images/halloween-2837936_1920.png');
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: center center;
-  height: 100vh;
+  background-position: center center;  
   transition: background-size 1.8s;
 }
 
