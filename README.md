@@ -2,6 +2,8 @@
 
 TODO: Add amiresponsive img
 
+Link to live website: [TODO: ENTER PROJECT NAME](https://avtpepper.github.io/halloween-hackathon/)
+
 <hr>
 
 ## Table of contents
@@ -17,6 +19,8 @@ TODO: Add amiresponsive img
 A project created by a group of Code Institute students for the October Halloween Hackathon.
 
 ### Agile Methodology
+
+Our team successfully implemented the Agile Methodology throughout the development process of the website. By employing Agile principles, we prioritized collaboration, adaptability, and iterative progress. We did this by regular meetings, continuous communication on slack and making use of the project board on Github with Epics, user stories and issues.
 
 ### UX / UI
 
