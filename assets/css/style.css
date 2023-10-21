@@ -34,7 +34,8 @@ body {
 }
 
 /* Header styles */
-h2 {
+h2,
+h3 {
     font-family: 'Creepster', sans-serif;
 }
 
