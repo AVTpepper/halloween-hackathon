@@ -61,7 +61,13 @@ A project created by a group of Code Institute students for the October Hallowee
 
 ## Deployment
 
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the GitHub repository, navigate to the Settings tab
+- Click on Pages in the menu on the right side in the Code and Automation section
+- Under Branch, select main in the dropdown menu and click save
+- Once the main branch has been selected and saved, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
+Link to live website: [TODO: ENTER PROJECT NAME](https://avtpepper.github.io/halloween-hackathon/)
 
 ## Contributors
 
