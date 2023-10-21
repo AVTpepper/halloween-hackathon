@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Creepster&display=swap');
 
 @keyframes hero-zoom {
@@ -58,3 +59,7 @@ h2 {
 #reset-button {
     background-color: #6600cc;
 }
+=======
+/* General styles */
+
+* /* wild card selector for overriding standard browser styles */
