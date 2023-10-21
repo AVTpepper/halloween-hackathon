@@ -18,8 +18,17 @@
 ------- Global styles -------
 -------------------------- */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-image: url('../images/halloween-2837936_1920.png');
+    background: url('../images/moon-outdoors-pumpkin.webp') center fixed;
+    background-color: #d2cbe3;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: #fd9702;
     font-family: 'Arvo', sans-serif;
 }
@@ -28,6 +37,22 @@ body {
 h2 {
     font-family: 'Creepster', sans-serif;
 }
+
+/* Media */
+audio {
+    width: 250px;
+    height: 35px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #77381A;
+    border: #77381A;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+    color: #fff;
+}
+
 
 
 /* --------------------------
@@ -43,8 +68,10 @@ h2 {
 } */
 
 #container {
-    background-color: rgba(174,3,255, 0.5); /* Adjust the color and alpha (0.7) as needed */
-    padding: 10px; /* Add padding to improve visibility */
+    background-color: rgba(174, 3, 255, 0.5);
+    /* Adjust the color and alpha (0.7) as needed */
+    padding: 10px;
+    /* Add padding to improve visibility */
     /* margin: 40px; */
     animation-name: hero-zoom;
     animation-duration: 5s;
@@ -83,4 +110,13 @@ h2 {
 /* Reset button styles */
 #reset-button {
     background-color: #6600cc;
+}
+
+/* Media queries */
+
+/* Small screens until 600px */
+@media screen and (max-width: 490px) {
+    body {
+        background: url('../images/moon-outdoors-pumpkin.webp') bottom right fixed;
+    }
 }
