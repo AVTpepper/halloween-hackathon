@@ -32,37 +32,39 @@ Our Github projects board during development:
 Designed to immerse the user in a spooky environment with visual effects and sounds.
 Playful scary images used and strong colour pallet is chosen.
 
+#### Initial wireframe sketches
+<p align="left"><img src="assets\images\story-creation-desktop-wireframe.jpg" alt="Example of our Github projects board during development" width="500"/></p>
 
 ## Features
 
 ### Introduction animation
 To immediatly set the appropriate tone, user is introduced to the website with spooky animations. Starting with smooth calm transitions to lure the user into a false sense of security and then followed by a startling surprise.
 
-<p align="left"><img src="" alt="Picture of introduction animation" width="400"/></p>
+<p align="left"><img src="" alt="Picture of introduction animation" width="500"/></p>
 
 ### Introduction page
 
 The introduction page is where User introduced to the story creator and can begin their journey.
 
-<p align="left"><img src="" alt="Picture of introduction page" width="400"/></p>
+<p align="left"><img src="" alt="Picture of introduction page" width="500"/></p>
 
 ### User choices
 
 User has multiple options to choose from along the way that affects the generated story.
 
-<p align="left"><img src="" alt="Picture of user choice page" width="400"/></p>
+<p align="left"><img src="" alt="Picture of user choice page" width="500"/></p>
 
 ### Generate story
 
 After all decisions have been made a story is generated, it is displayed with animations and sound for a great reading experience.
 
-<p align="left"><img src="" alt="Picture of generated story" width="400"/></p>
+<p align="left"><img src="" alt="Picture of generated story" width="500"/></p>
 
 ### About us page
 
 Here user is thanked for visit the page and get to meet the creators.
 
-<p align="left"><img src="" alt="Picture of About us page" width="400"/></p>
+<p align="left"><img src="" alt="Picture of About us page" width="500"/></p>
 
 
 ## Features left to implement
