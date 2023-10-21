@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Creepster&display=swap');
 
 @keyframes hero-zoom {
@@ -13,8 +12,6 @@
 
 body {
     background-image: url('../images/halloween-2837936_1920.png');
-    height: 100vh;
-    width: 100vw;
     color: #fd9702;
     font-family: 'Arvo', sans-serif;
 }
@@ -31,6 +28,7 @@ h2 {
     animation-name: hero-zoom;
     animation-duration: 5s;
     animation-fill-mode: forwards;
+    min-height: 400px;
 }
 
 /* Button styles */
@@ -59,7 +57,3 @@ h2 {
 #reset-button {
     background-color: #6600cc;
 }
-=======
-/* General styles */
-
-* /* wild card selector for overriding standard browser styles */
