@@ -23,12 +23,13 @@
 }
 
 body {
-    background: url('../images/moon-outdoors-pumpkin.webp') center fixed;
+    /* min-height: 100vh; */
+    background: url('../images/park-anthropomorphic-jack-o-lantern.webp') center fixed;
     background-color: #d2cbe3;
+    background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    -o-background-size: cover;    
     color: #fd9702;
     font-family: 'Arvo', sans-serif;
 }
@@ -118,6 +119,7 @@ audio::-webkit-media-controls-time-remaining-display {
 /* Small screens until 600px */
 @media screen and (max-width: 490px) {
     body {
-        background: url('../images/moon-outdoors-pumpkin.webp') bottom right fixed;
+        background: url('../images/moon-outdoors-pumpkin.webp')bottom right fixed;
+        background-size: cover;
     }
 }
