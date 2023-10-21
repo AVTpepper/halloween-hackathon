@@ -27,33 +27,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const yesButton = document.getElementById("yes-button");
   const generatedStoryDiv = document.getElementById("generated-story");
 
-
   // Opening sequece transitions
   window.setTimeout(transformBackground, 100);
   // window.setTimeout(showHeading, 1500);
   window.setTimeout(showContainer, 1000);
   // window.setTimeout(showSurpriceElement, 4000);
 
-
   function transformBackground() {
-    document.getElementById('bg-image').style.backgroundSize = '120%';
+    document.getElementById("bg-image").style.backgroundSize = "120%";
   }
 
   // function showHeading() {
   //   document.getElementById('heading').style.opacity = '1';
   // }
-  
+
   function showContainer() {
-    document.getElementById('container').style.opacity = '1';
+    document.getElementById("container").style.opacity = "1";
   }
-  
+
   // function showSurpriceElement() {
   //   const pumpkins = document.getElementsByClassName('pumpkins');
   //   for (let pumpkin of pumpkins) {
   //     pumpkin.style.opacity = '1';
   // }
-
-
 
   // EVENT LISTENERS
 
@@ -177,14 +173,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let prompt = `Create a short story in the ${spookinessType} genre. `;
     prompt += `The story should have ${numCharacters} main character(s): `;
     characters.forEach((char, index) => {
-      prompt += `${char.name} (${char.sex})${index === characters.length - 1 ? "." : ", "
-        }`;
+      prompt += `${char.name} (${char.sex})${
+        index === characters.length - 1 ? "." : ", "
+      }`;
     });
     prompt += "\n\nStory: ";
 
     const storyText = await generateStory(prompt);
 
-    generatedStoryDiv.innerText = storyText;
+    // Clear the content before starting the typing effect
+    generatedStoryDiv.textContent = "";
+    typeEffect(generatedStoryDiv, storyText, 75); // number adjusts the speed on the type effect. 
     goToSection("display-story");
   });
 
@@ -213,3 +212,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+// type effect for story generation
+
+function typeEffect(element, text, delay = 100) {
+  let i = 0;
+  const typingInterval = setInterval(function () {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+    } else {
+      clearInterval(typingInterval); // Stop the interval when all characters are displayed
+    }
+  }, delay);
+}
