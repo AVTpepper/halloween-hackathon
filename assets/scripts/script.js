@@ -35,15 +35,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function transformBackground() {
     document.getElementById("bg-image").style.backgroundSize = "120%";
+    document.getElementById("bg-image").style.backgroundSize = "120%";
   }
 
   // function showHeading() {
   //   document.getElementById('heading').style.opacity = '1';
   // }
 
+
   function showContainer() {
     document.getElementById("container").style.opacity = "1";
+    document.getElementById("container").style.opacity = "1";
   }
+
 
   // function showSurpriceElement() {
   //   const pumpkins = document.getElementsByClassName('pumpkins');
@@ -159,6 +163,11 @@ document.addEventListener("DOMContentLoaded", () => {
     createCharacterInputs(numCharactersInput.value);
   });
 
+
+  generateStoryButton.addEventListener("click", () => {
+    generatedStoryDiv.innerHTML =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
   generateStoryButton.addEventListener("click", async () => {
     const spookinessType = spookinessTypeInput.value;
     const numCharacters = parseInt(numCharactersInput.value, 10);
@@ -176,6 +185,9 @@ document.addEventListener("DOMContentLoaded", () => {
       prompt += `${char.name} (${char.sex})${
         index === characters.length - 1 ? "." : ", "
       }`;
+      prompt += `${char.name} (${char.sex})${
+        index === characters.length - 1 ? "." : ", "
+      }`;
     });
     prompt += "\n\nStory: ";
 
@@ -184,8 +196,35 @@ document.addEventListener("DOMContentLoaded", () => {
     // Clear the content before starting the typing effect
     generatedStoryDiv.textContent = "";
     typeEffect(generatedStoryDiv, storyText, 75); // number adjusts the speed on the type effect.
+
     goToSection("display-story");
   });
+
+  // generateStoryButton.addEventListener("click", async () => {
+  //   const spookinessType = spookinessTypeInput.value;
+  //   const numCharacters = parseInt(numCharactersInput.value, 10);
+
+  //   const characters = [];
+  //   for (let i = 1; i <= numCharacters; i++) {
+  //     const name = document.getElementById(`character${i}-name`).value;
+  //     const sex = document.getElementById(`character${i}-sex`).value;
+  //     characters.push({ name, sex });
+  //   }
+
+  //   let prompt = `Create a short story in the ${spookinessType} genre. `;
+  //   prompt += `The story should have ${numCharacters} main character(s): `;
+  //   characters.forEach((char, index) => {
+  //     prompt += `${char.name} (${char.sex})${
+  //       index === characters.length - 1 ? "." : ", "
+  //     }`;
+  //   });
+  //   prompt += "\n\nStory: ";
+
+  //   const storyText = await generateStory(prompt);
+
+  //   generatedStoryDiv.innerText = storyText;
+  //   goToSection("display-story");
+  // });
 
   async function generateStory(prompt) {
     const response = await fetch("https://api.openai.com/v1/completions", {
@@ -212,6 +251,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+// type effect for story generation
+
+function typeEffect(element, text, delay = 100) {
+  let i = 0;
+  const typingSound = document.getElementById("typing-sound");
+  
+  // Play the audio when typing starts
+  typingSound.play();
+
+  const typingInterval = setInterval(function() {
+      if (i < text.length) {
+          // Handle consecutive newlines as a new paragraph
+          if (text.substring(i, i + 2) === "\n\n") {
+              element.innerHTML += "<br><br>";
+              i += 2; // Increment by 2 to skip both newline characters
+          }
+          // Handle single newlines as a line break
+          else if (text.charAt(i) === "\n") {
+              element.innerHTML += "<br>";
+              i++;
+          } else {
+              element.innerHTML += text.charAt(i);
+              i++;
+          }
+      } else {
+          clearInterval(typingInterval);  // Stop the interval when all characters are displayed
+          typingSound.pause(); // Pause the audio
+          typingSound.currentTime = 0; // Reset audio to start
+      }
+  }, delay);
+}
+
+typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
 
 // type effect for story generation
 
