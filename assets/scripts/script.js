@@ -31,28 +31,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // Opening sequece transitions
+  // Opening sequence transitions
   //  window.setTimeout(transformBackground, 100);
   window.setTimeout(showHeadingWelcome, 1500);
-  //  window.setTimeout(showHeadingTo, 2500);
-  //  window.setTimeout(showHeadingSpooky, 3000);
-  //  window.setTimeout(fadeOutHeadings, 4000);
-  //  window.setTimeout(hideHeadings, 5000);
-  window.setTimeout(showContainer, 6000);
-
+  window.setTimeout(showHeadingTo, 2700);
+  window.setTimeout(showHeadingSpooky, 3600);
+  window.setTimeout(fadeOutHeadings, 5000);
+  window.setTimeout(hideHeadings, 6200);
+  window.setTimeout(showContainer, 6300);
+  window.setTimeout(fadeInContainer, 6400);
   window.setTimeout(showSurpriceElement, 9000);
 
-  function transformBackground() {
-    // document.getElementById("bg-image").style.backgroundSize = "120%";
-  }
+  // function transformBackground() {
+  //   document.getElementById("bg-image").style.backgroundSize = "120%";
+  // }
 
   function showHeadingWelcome() {
     document.getElementById('welcome').style.opacity = '1';
   }
 
+  function showHeadingTo() {
+    document.getElementById('welcome-to').style.opacity = '1';
+  }
+
+  function showHeadingSpooky() {
+    document.getElementById('spooky-story-creation').style.opacity = '1';
+  }
+
+  function fadeOutHeadings() {
+    document.getElementById('welcome-headings').style.opacity = '0';
+  }
+
+  function hideHeadings() {
+    document.getElementById('welcome-headings').style.display = 'none';
+  }
+
   function showContainer() {
     let container = document.getElementById("container");
     container.style.display = 'block';
+  }
+
+  function fadeInContainer() {
+    let container = document.getElementById("container");
     container.style.animationName = 'hero-zoom';
     container.style.opacity = "1";
   }

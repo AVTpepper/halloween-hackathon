@@ -80,6 +80,7 @@ img {
 #welcome-headings {
   color: rgb(29, 20, 32);
   text-shadow: 0 0 10px orange;
+  transition: opacity 1.2s;
 }
 
 #welcome,
@@ -89,15 +90,15 @@ img {
 }
 
 #welcome {
-  transition: opacity 1s;
+  transition: opacity 1.5s;
 }
 
 #welcome-to {
-  transition: opacity 0.8s;
+  transition: opacity 1.2s;
 }
 
 #spooky-story-creation {
-  transition: opacity 0.4s;
+  transition: opacity 0.7s;
 }
 
 #container {
