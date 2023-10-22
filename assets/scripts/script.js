@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showContainer() {
     let container = document.getElementById("container");
-    container.style.display = 'block';
+    container.style.display = 'flex';
   }
 
   function fadeInContainer() {
