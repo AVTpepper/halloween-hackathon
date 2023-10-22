@@ -6,7 +6,7 @@
 
 @keyframes hero-zoom {
     from {
-        transform: scale(0.5);
+        transform: scale(0.7);
     }
 
     to {
@@ -80,11 +80,11 @@ img {
     padding-bottom: 10px;
     /* Add padding to improve visibility */
     /* margin: 40px; */
-    animation-name: hero-zoom;
-    animation-duration: 5s;
+    /* animation-name: hero-zoom; */
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     min-height: 400px;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 2s;
 }
 

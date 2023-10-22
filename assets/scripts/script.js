@@ -28,31 +28,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const aboutUsButton = document.getElementById("about-us-button")
   const generatedStoryDiv = document.getElementById("generated-story");
 
-  // Opening sequece transitions
-  window.setTimeout(transformBackground, 100);
-  // window.setTimeout(showHeading, 1500);
-  window.setTimeout(showContainer, 1000);
-  // window.setTimeout(showSurpriceElement, 4000);
 
-  function transformBackground() {
-    document.getElementById("bg-image").style.backgroundSize = "120%";
-    document.getElementById("bg-image").style.backgroundSize = "120%";
-  }
 
-  // function showHeading() {
-  //   document.getElementById('heading').style.opacity = '1';
-  // }
 
-  function showContainer() {
-    document.getElementById("container").style.opacity = "1";
-    document.getElementById("container").style.opacity = "1";
-  }
+ // Opening sequece transitions
+ window.setTimeout(transformBackground, 100);
+ window.setTimeout(showHeadingWelcome, 1500);
+ window.setTimeout(showHeadingTo, 2500);
+ window.setTimeout(showHeadingSpooky, 3000);
+ window.setTimeout(fadeOutHeadings, 4000);
+ window.setTimeout(hideHeadings, 5000);
+ window.setTimeout(showContainer, 1000);
+ window.setTimeout(showSurpriceElement, 8000);
 
-  // function showSurpriceElement() {
-  //   const pumpkins = document.getElementsByClassName('pumpkins');
-  //   for (let pumpkin of pumpkins) {
-  //     pumpkin.style.opacity = '1';
-  // }
+ function transformBackground() {
+   // document.getElementById("bg-image").style.backgroundSize = "120%";
+ }
+
+ // function showHeading() {
+ //   document.getElementById('heading').style.opacity = '1';
+ // }
+
+ function showContainer() {
+   let container = document.getElementById("container");
+container.style.animationName = 'hero-zoom';
+   container.style.opacity = "1";
+ }
+
+ // function showSurpriceElement() {
+ //   const pumpkins = document.getElementsByClassName('pumpkins');
+ //   for (let pumpkin of pumpkins) {
+ //     pumpkin.style.opacity = '1';
+ // }
+
+
+
 
   // EVENT LISTENERS
 
