@@ -156,8 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Reset the form and go back to landing
   function resetForm() {
-    document.getElementById('creating-story-info').style.opacity = '0';
     goToSection("landing-section");
+    document.getElementById('creating-story-info').style.opacity = '0';    
   }
 
   // Function to create character input fields
