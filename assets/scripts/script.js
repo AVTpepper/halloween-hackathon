@@ -6,14 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
   For instance, you can store the API key in pieces and then combine them at runtime. */
   const part1 = "sk-Rsx0wYVCbTOclMMitntQT3B";
   const part2 = "lbkFJl1s7nH872Fr01UG149UD";
-
   const apiKey = part1 + part2;
 
   const spookinessTypeInput = document.getElementById("spookiness-type");
   const numCharactersInput = document.getElementById("num-characters");
   const charactersContainer = document.getElementById("characters-container");
   const generateStoryButton = document.querySelector(
-    "#generate-story .btn-primary"
+    "#generate-story .generate-btn"
   );
   const startButton = document.getElementById("start-button");
   const resetButton = document.getElementById("reset-button");
@@ -31,21 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const generatedStoryDiv = document.getElementById("generated-story");
 
   // Opening sequence transitions
-  //  window.setTimeout(transformBackground, 100);
-  window.setTimeout(showHeadingWelcome, 1500);
-  window.setTimeout(showHeadingTo, 2700);
-  window.setTimeout(showHeadingSpooky, 3600);
-  window.setTimeout(fadeOutHeadings, 5000);
-  window.setTimeout(hideHeadings, 6200);
-  window.setTimeout(showContainer, 6300);
-  window.setTimeout(fadeInContainer, 6400);
-  window.setTimeout(showSurpriceElement, 9000);
-  window.setTimeout(fadeOutWerewolf, 10000);
-  window.setTimeout(hideWerewolf, 11600);
-
-  // function transformBackground() {
-  //   document.getElementById("bg-image").style.backgroundSize = "120%";
-  // }
+  window.setTimeout(showHeadingWelcome, 500);
+  window.setTimeout(showHeadingTo, 1700);
+  window.setTimeout(showHeadingSpooky, 2600);
+  window.setTimeout(fadeOutHeadings, 4000);
+  window.setTimeout(hideHeadings, 5200);
+  window.setTimeout(showContainer, 5300);
+  window.setTimeout(fadeInContainer, 5350);
+  window.setTimeout(showSurpriceElement, 8000);
+  window.setTimeout(fadeOutWerewolf, 9500);
+  window.setTimeout(hideWerewolf, 10600);
 
   function showHeadingWelcome() {
     document.getElementById("welcome").style.opacity = "1";
@@ -68,14 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showContainer() {
-    let container = document.getElementById("container");
-    container.style.display = "flex";
+    document.getElementById("container").style.display = "flex";
   }
 
   function fadeInContainer() {
-    let container = document.getElementById("container");
-    container.style.animationName = "hero-zoom";
-    container.style.opacity = "1";
+    document.getElementById("container").style.opacity = "1";
   }
 
   function showSurpriceElement() {
@@ -129,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
   backButton.addEventListener("click", () => {
     goToSection("display-story");
   });
+  // For the last start-over button to reset the form and go again.
   retryButton.addEventListener("click", resetForm);
 
   let userSelection = null; // this variable will store the user's choice
@@ -181,9 +173,11 @@ document.addEventListener("DOMContentLoaded", () => {
       nameLabel.className = "block";
 
       const nameInput = document.createElement("input");
+      nameInput.placeholder = "Enter a name or leave blank";
       nameInput.id = `character${i}-name`;
       nameInput.type = "text";
       nameInput.className = "form-control";
+      nameInput.required = true;
 
       const sexLabel = document.createElement("label");
       sexLabel.htmlFor = `character${i}-sex`;
@@ -219,40 +213,38 @@ document.addEventListener("DOMContentLoaded", () => {
     createCharacterInputs(numCharactersInput.value);
   });
 
-  generateStoryButton.addEventListener("click", () => {
-    generatedStoryDiv.innerHTML =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-    goToSection("display-story");
-  });
-
   aboutUsButton.addEventListener("click", () => {
     goToSection("about-us");
   });
-  // generateStoryButton.addEventListener("click", async () => {
-  //   const spookinessType = spookinessTypeInput.value;
-  //   const numCharacters = parseInt(numCharactersInput.value, 10);
 
-  //   const characters = [];
-  //   for (let i = 1; i <= numCharacters; i++) {
-  //     const name = document.getElementById(`character${i}-name`).value;
-  //     const sex = document.getElementById(`character${i}-sex`).value;
-  //     characters.push({ name, sex });
-  //   }
+  generateStoryButton.addEventListener("click", async () => {
+    const spookinessType = spookinessTypeInput.value;
+    const numCharacters = parseInt(numCharactersInput.value, 10);
 
-  //   let prompt = `Create a short story in the ${spookinessType} genre. `;
-  //   prompt += `The story should have ${numCharacters} main character(s): `;
-  //   characters.forEach((char, index) => {
-  //     prompt += `${char.name} (${char.sex})${
-  //       index === characters.length - 1 ? "." : ", "
-  //     }`;
-  //   });
-  //   prompt += "\n\nStory: ";
+    const characters = [];
+    for (let i = 1; i <= numCharacters; i++) {
+      const name = document.getElementById(`character${i}-name`).value;
+      const sex = document.getElementById(`character${i}-sex`).value;
+      characters.push({ name, sex });
+    }
 
-  //   const storyText = await generateStory(prompt);
+    let prompt = `Create a short story in the ${spookinessType} genre. `;
+    prompt += `The story should have ${numCharacters} main character(s): `;
+    characters.forEach((char, index) => {
+      prompt += `${char.name} (${char.sex})${
+        index === characters.length - 1 ? "." : ", "
+      }`;
+    });
+    prompt += "\n\nStory: ";
 
-  //   generatedStoryDiv.innerText = storyText;
-  //   goToSection("display-story");
-  // });
+    const storyText = await generateStory(prompt);
+
+    // Display the story using the typing effect
+    generatedStoryDiv.innerText = "";
+    typeEffect(generatedStoryDiv, storyText, 50);
+
+    goToSection("display-story");
+  });
 
   async function generateStory(prompt) {
     const response = await fetch("https://api.openai.com/v1/completions", {
@@ -278,6 +270,37 @@ document.addEventListener("DOMContentLoaded", () => {
       return "An error occurred while generating the story. Please try again.";
     }
   }
+  function typeEffect(element, text, delay = 100) {
+    let i = 0;
+    const typingSound = document.getElementById("typing-sound");
+
+    // Play the audio when typing starts
+    typingSound.play();
+
+    const typingInterval = setInterval(function () {
+      if (i < text.length) {
+        // Handle consecutive newlines as a new paragraph
+        if (text.substring(i, i + 2) === "\n\n") {
+          element.innerHTML += "<br><br>";
+          i += 2; // Increment by 2 to skip both newline characters
+        }
+        // Handle single newlines as a line break
+        else if (text.charAt(i) === "\n") {
+          element.innerHTML += "<br>";
+          i++;
+        } else {
+          element.innerHTML += text.charAt(i);
+          i++;
+        }
+      } else {
+        clearInterval(typingInterval); // Stop the interval when all characters are displayed
+        typingSound.pause(); // Pause the audio
+        typingSound.currentTime = 0; // Reset audio to start
+      }
+    }, delay);
+  }
+
+  typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
 
   //   const audio = document.getElementById("myAudio");
   //   const playPauseBtn = document.getElementById("playPauseBtn");
@@ -332,36 +355,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // });
 
   // type effect for story generation
-
-  function typeEffect(element, text, delay = 100) {
-    let i = 0;
-    const typingSound = document.getElementById("typing-sound");
-
-    // Play the audio when typing starts
-    typingSound.play();
-
-    const typingInterval = setInterval(function () {
-      if (i < text.length) {
-        // Handle consecutive newlines as a new paragraph
-        if (text.substring(i, i + 2) === "\n\n") {
-          element.innerHTML += "<br><br>";
-          i += 2; // Increment by 2 to skip both newline characters
-        }
-        // Handle single newlines as a line break
-        else if (text.charAt(i) === "\n") {
-          element.innerHTML += "<br>";
-          i++;
-        } else {
-          element.innerHTML += text.charAt(i);
-          i++;
-        }
-      } else {
-        clearInterval(typingInterval); // Stop the interval when all characters are displayed
-        typingSound.pause(); // Pause the audio
-        typingSound.currentTime = 0; // Reset audio to start
-      }
-    }, delay);
-  }
-
-  typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
 });

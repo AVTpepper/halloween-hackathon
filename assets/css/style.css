@@ -19,7 +19,7 @@
 -------------------------- */
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 * {
@@ -67,19 +67,21 @@ audio::-webkit-media-controls-time-remaining-display {
 
 /* about us IMAGES */
 
-.fa-github, .fa-linkedin {
-    color: #ff6600;
+.fa-github,
+.fa-linkedin {
+  color: #ff6600;
 }
-  
-.fa-github:hover, .fa-linkedin:hover {
-    color: #eee;
+
+.fa-github:hover,
+.fa-linkedin:hover {
+  color: #eee;
 }
 
 img {
-    margin: 5px;
-    animation-name: hero-zoom;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+  margin: 5px;
+  animation-name: hero-zoom;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 #werewolf-img {
@@ -88,8 +90,10 @@ img {
   right: 0;
   z-index: 99;
   height: 70%;
+  width: auto;
   display: none;
   transition: opacity 1.5s;
+  animation-duration: 0.2s;
 }
 
 /* pumpkin animation */
@@ -111,7 +115,7 @@ img {
 } */
 
 #welcome-headings {
-  color: rgb(29, 20, 32);
+  color: rgb(12, 9, 14);
   text-shadow: 0 0 10px orange;
   transition: opacity 1.2s;
 }
@@ -135,37 +139,22 @@ img {
 }
 
 #container {
-  background-color: rgba(9, 7, 10, 0.8);
-  /* Adjust the color and alpha (0.7) as needed */
-  padding-top: 10px;
-  padding-bottom: 10px;
-  /* Add padding to improve visibility */
-  /* margin: 40px; */
-  animation-name: hero-zoom;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-  min-height: 400px;
-  opacity: 1;
-  transition: opacity 2s;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  height: 100%; /* Add this */
-}
+    background-color: rgba(9, 7, 10, 0.8);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    animation-name: hero-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    min-height: 400px;
+    opacity: 0; /* if you want it to be initially invisible, otherwise set to 1 */
+    transition: opacity 2s;
+    display: none; /* if you want it to be initially hidden, otherwise remove */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+  }
 
-#landing-section,
-#story-foundation,
-#character-generation,
-#age-verification,
-#generate-story,
-#display-story,
-#about-us {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
 
 .btn-container {
   margin-top: auto;
@@ -176,8 +165,8 @@ img {
 
 .borders {
   border: solid 5px;
-  border-top-left-radius: 50% 15% !important;
-  border-top-right-radius: 50% 15% !important;
+  border-top-left-radius: 15rem 5rem;
+  border-top-right-radius: 15rem 5rem;;
   box-shadow: 5px 5px 59px rgb(255, 165, 0);
 }
 
@@ -228,6 +217,14 @@ img {
   border-color: #000;
 }
 
+.generate-btn:focus,
+.generate-btn:active {
+    background-color: rgba(9, 7, 10, 0.5);
+    border-color: #000;
+    color: rgb(255, 102, 0);
+    box-shadow: 0px 0px 20px rgb(255, 165, 0);
+}
+
 /* Style specifically for the audio buttons */
 .audio-btn {
   margin-right: 10px;
@@ -238,7 +235,9 @@ img {
 /* Add any specific styles for the volume slider here */
 /* } */
 
-/* Media queries */
+/* --------------------------
+------- Media queries -------
+-------------------------- */
 
 /* Small screens until 600px */
 @media screen and (max-width: 490px) {
@@ -247,10 +246,10 @@ img {
     background-size: cover;
   }
 
-img {
+  img {
     width: 80px;
     height: 80px;
-}
+  }
 }
 
 @media (min-width: 474px) and (max-width: 767px) {
@@ -261,7 +260,20 @@ img {
 
 @media screen and (min-width: 768px) {
   #werewolf-img {
-    right: 25%;
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #werewolf-img {
+    right: 15%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #werewolf-img {
+    right: 20%;
     height: 100%;
   }
 }
