@@ -45,7 +45,7 @@ To immediatly set the appropriate tone, user is introduced to the website with s
 
 ### Introduction page
 
-The introduction page is where User introduced to the story creator and can begin their journey.
+The introduction page is where the user introduced to the story creator and can begin their journey.
 
 <p align="left"><img src="" alt="Picture of introduction page" width="500"/></p>
 
@@ -122,10 +122,10 @@ Link to live website: [Spooky story creation](https://avtpepper.github.io/hallow
 
 ## Contributors
 
-- Alex [AVTpepper](https://github.com/AVTpepper)
-- Sara [sbojorge](https://github.com/sbojorge)
-- Samuel [FullstackSammy](https://github.com/FullstackSammy)
-- Niclas [NiclO1337](https://github.com/NiclO1337)
+- Alex - [AVTpepper](https://github.com/AVTpepper)
+- Sara - [sbojorge](https://github.com/sbojorge)
+- Samuel - [FullstackSammy](https://github.com/FullstackSammy)
+- Niclas - [NiclO1337](https://github.com/NiclO1337)
 
 ## Credits
 
@@ -136,6 +136,9 @@ Audio element styling inspired from: [Shahed Nasser's blog](https://blog.shahedn
 ### Media
 
 #### Images
+
+Werewold image by <a href="https://pixabay.com/illustrations/werewolf-wolf-fantasia-horror-dark-8070653/">Sabrina Belle</a>
+
 
 
 #### Audio
