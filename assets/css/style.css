@@ -65,6 +65,16 @@ img {
   margin: 10px;
 }
 
+#werewolf-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    height: 70%;
+    display: none;
+    transition: opacity 1.5s;
+}   
+
 /* --------------------------
 ------- Layout styles -------
 -------------------------- */
@@ -169,6 +179,12 @@ img {
     background: url("../images/moon-outdoors-pumpkin.webp") bottom right fixed;
     background-size: cover;
   }
+
+  #werewolf-img {
+    right: 25%;
+    height: 100%;
+}   
+
 }
 
 /* Style specifically for the audio buttons */
