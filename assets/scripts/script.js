@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
   window.setTimeout(showHeadingSpooky, 3600);
   window.setTimeout(fadeOutHeadings, 5000);
   window.setTimeout(hideHeadings, 6200);
-  window.setTimeout(showContainer, 6300);
-  window.setTimeout(fadeInContainer, 6400);
+  window.setTimeout(showContainer, 6300);  
+  window.setTimeout(fadeInContainer, 6350);
   window.setTimeout(showSurpriceElement, 9000);
-  window.setTimeout(fadeOutWerewolf, 10000);
+  window.setTimeout(fadeOutWerewolf, 10500);
   window.setTimeout(hideWerewolf, 11600);
 
   // function transformBackground() {
@@ -71,27 +71,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showContainer() {
-    let container = document.getElementById("container");
-    container.style.display = 'flex';
+    document.getElementById("container").style.display = 'flex';
   }
 
   function fadeInContainer() {
-    let container = document.getElementById("container");
-    container.style.animationName = 'hero-zoom';
-    container.style.opacity = "1";
+    document.getElementById("container").style.opacity = "1";
   }
 
   function showSurpriceElement() {
     document.getElementById('audio-control').style.opacity = "1";
-    document.getElementById('werewolf-img').style.display = "block";    
+    document.getElementById('werewolf-img').style.display = "block";
   }
 
   function fadeOutWerewolf() {
-    document.getElementById('werewolf-img').style.opacity = "0";    
+    document.getElementById('werewolf-img').style.opacity = "0";
   }
 
   function hideWerewolf() {
-    document.getElementById('werewolf-img').style.display = "none";    
+    document.getElementById('werewolf-img').style.display = "none";
   }
 
 
