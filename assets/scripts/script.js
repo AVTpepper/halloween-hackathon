@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showContainer() {
     let container = document.getElementById("container");
-    container.style.display = 'block';
+    container.style.display = 'flex';
   }
 
   function fadeInContainer() {
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const sexSelect = document.createElement("select");
       sexSelect.id = `character${i}-sex`;
-      sexSelect.className = "form-select";
+      sexSelect.className = "form-control";
 
       const maleOption = document.createElement("option");
       maleOption.value = "male";

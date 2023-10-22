@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    
+
     <div id="bg-image" class="container d-flex justify-content-center align-items-center min-vh-100">
-        
+
         <div class="col-10 col-md-9 col-lg-6 m-4">
             <div id="welcome-headings" class="text-center">
                 <h1 id="welcome" class="mb-0">Welcome</h1>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <!-- Landing Page -->
-                <div id="landing-section" class="section mb-4 col-10 col-md-9 col-lg-6 mx-auto">
+                <div id="landing-section" class="section mb-4 col-10 col-md-10 col-lg-10 mx-auto">
                     <p class="text-center mb-3">Welcome to the Spooky Story Generator. Are you ready to create your
                         Halloween short story?</p>
                     <p class="text-center mb-4">Click the button if you dare!</p>
@@ -43,52 +43,28 @@
                 </div>
 
                 <!-- Story Foundation -->
-                <div id="story-foundation" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
+                <div id="story-foundation" class="section d-none mb-4 col-10 col-md-10 col-lg-10 mx-auto">
                     <div class="squared-circle text-center mb-4">Story Foundation</div>
                     <div class="row mb-4">
                         <div class="col-12 mb-4">
                             <div class="form-group">
-                                <label>Type of Spookiness</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="spookiness-type"
-                                        id="comedyHorror" value="Comedy Horror" checked>
-                                    <label class="form-check-label" for="comedyHorror">Comedy Horror</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="spookiness-type" id="horror"
-                                        value="Horror">
-                                    <label class="form-check-label" for="horror">Horror</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="spookiness-type" id="thriller"
-                                        value="Thriller">
-                                    <label class="form-check-label" for="thriller">Thriller</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="spookiness-type"
-                                        id="romanticHorror" value="Romantic Horror">
-                                    <label class="form-check-label" for="romanticHorror">Romantic Horror</label>
-                                </div>
+                                <label for="spookiness-type">Type of Spookiness</label>
+                                <select id="spookiness-type" class="form-control">
+                                    <option>Comedy Horror</option>
+                                    <option>Horror</option>
+                                    <option>Thriller</option>
+                                    <option>Romantic Horror</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label>Number of Characters</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="num-characters" id="oneCharacter"
-                                        value="1" checked>
-                                    <label class="form-check-label" for="oneCharacter">1</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="num-characters"
-                                        id="twoCharacters" value="2">
-                                    <label class="form-check-label" for="twoCharacters">2</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="num-characters"
-                                        id="threeCharacters" value="3">
-                                    <label class="form-check-label" for="threeCharacters">3</label>
-                                </div>
+                                <label for="num-characters">Number of Characters</label>
+                                <select id="num-characters" class="form-control">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -97,10 +73,8 @@
                     </div>
                 </div>
 
-
-
                 <!-- Character Generation -->
-                <div id="character-generation" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
+                <div id="character-generation" class="section d-none mb-4 col-10 col-md-10 col-lg-10 mx-auto">
                     <div class="squared-circle text-center m-4 mb-1">Character Generation</div>
                     <div class="row mb-4 justify-content-center">
 
@@ -117,7 +91,7 @@
                 </div>
 
                 <!-- Age Verification -->
-                <div id="age-verification" class="section d-none mb-4">
+                <div id="age-verification" class="section d-none mb-4 col-10 col-md-10 col-lg-10 mx-auto">
 
                     <div class="row mb-4 justify-content-center">
                         <div class="col-md-6 mb-4">
@@ -139,18 +113,23 @@
                     </div>
                 </div>
                 <!-- Generate Story -->
-                <div id="generate-story" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
-                    <p class="text-center warning-text mb-4">Dare you summon the tale from the depths of the unknown?
-                        Once revealed, its shadows might just cling to your very soul...</p>
-                    <div class="btn-container text-center mb-4 mt-auto">
-                        <button id="generate-story" class="btn btn-primary consistent-btn">Generate Story</button>
-                        <button id="reset-button"
-                            class="btn btn-secondary mt-2 mt-sm-0 mt-md-0 order-md-0 consistent-btn">Reset</button>
+                <div id="generate-story" class="section d-none mb-4 col-10 col-md-10 col-lg-10 mx-auto">
+                    <div class="row">
+                        <p class="text-center warning-text mb-4 p-3">Dare you summon the tale from the depths of the
+                            unknown?
+                            Once revealed, its shadows might just cling to your very soul...</p>
+                    </div>
+                    <div class="row text-center">
+                        <div
+                            class="btn-container">
+                            <button class="btn btn-primary consistent-btn mb-2 mb-md-0">Generate Story</button>
+                            <button id="reset-button" class="btn btn-secondary consistent-btn mb-2 mb-md-0">Reset</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Display Story -->
-                <div id="display-story" class="section d-none">
+                <div id="display-story" class="section d-none mb-4 col-10 col-md-10 col-lg-10 mx-auto">
                     <div class="squared-circle text-center mb-3">
                         <h3 class="mb-0">Your Spooky Story</h3>
                     </div>
@@ -167,7 +146,8 @@
                         <h3 class="mb-0">Thank you for trying out our scary story generator! <br> This is us:</h3>
                     </div>
                     <div id="about-us-section" class="story-output mt-1 mb-3 px-4">
-                        <img src="./assets/images/Alex.jpg" width="150" height="150" class="image img-fluid rounded mx-auto d-block" alt="...">
+                        <img src="./assets/images/Alex.jpg" width="150" height="150"
+                            class="image img-fluid rounded mx-auto d-block" alt="...">
                         <p class="text-center">
                             Alex
                             <a href="https://github.com/AVTpepper" target="_blank">
@@ -178,7 +158,8 @@
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </p>
-                        <img src="./assets/images/Sara.jpg" width="150" height="150" class="imgage img-fluid rounded mx-auto d-block" alt="...">
+                        <img src="./assets/images/Sara.jpg" width="150" height="150"
+                            class="imgage img-fluid rounded mx-auto d-block" alt="...">
                         <p class="text-center">
                             Sara
                             <a href="https://github.com/sbojorge" target="_blank">
@@ -188,7 +169,8 @@
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </p>
-                        <img src="./assets/images/sam.jpg" width="150" height="150" class="image img-fluid rounded mx-auto d-block" alt="...">
+                        <img src="./assets/images/sam.jpg" width="150" height="150"
+                            class="image img-fluid rounded mx-auto d-block" alt="...">
                         <p class="text-center">
                             Samuel
                             <a href="https://github.com/FullstackSammy" target="_blank">
@@ -198,7 +180,8 @@
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </p>
-                        <img src="./assets/images/Niclas.jpg" width="150" height="150" class="image img-fluid rounded mx-auto d-block" alt="...">
+                        <img src="./assets/images/Niclas.jpg" width="150" height="150"
+                            class="image img-fluid rounded mx-auto d-block" alt="...">
                         <p class="text-center">
                             Niclas
                             <a href="https://github.com/NiclO1337" target="_blank">
@@ -208,18 +191,10 @@
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </p>
-                        <img src="./assets/images/Alex.jpg" width="150" height="150"
-                            class="img-fluid rounded mx-auto d-block" alt="...">
-                        <img src="./assets/images/Sara.jpg" width="150" height="150"
-                            class="img-fluid rounded mx-auto d-block" alt="...">
-                        <img src="./assets/images/sam.jpg" width="150" height="150"
-                            class="img-fluid rounded mx-auto d-block" alt="...">
-                        <img src="./assets/images/Niclas.jpg" width="150" height="150"
-                            class="img-fluid rounded mx-auto d-block" alt="...">
                     </div>
                     <div class="text-center">
                         <button id="back-button" class="consistent-btn btn btn-secondary mb-4">Back</button>
-                        <button id="retry-button" class="consistent-btn consistent-btn btn btn-secondary mb-4">Start Over</button>
+                        <button id="retry-button" class="consistent-btn btn btn-secondary mb-4">Start Over</button>
                     </div>
                 </div>
                 <!-- <div class="row py-4 w-50 mx-auto">
@@ -233,9 +208,9 @@
                     <input type="range" class="audio-volume-slider" id="volumeSlider" min="0" max="1" step="0.1"
                         value="1">
                 </div> -->
-                
+
             </div>
-            <div class="row py-4 w-50 mx-auto">
+            <div id="audio-control" class="row py-4 w-50 mx-auto">
                 <audio controls loop>
                     <source src="./assets/media/680130__strangehorizon__another_cask_of_amontillado (1).mp3"
                         type="audio/mpeg">
@@ -243,7 +218,7 @@
                 </audio>
             </div>
         </div>
-        
+
     </div>
     <audio id="typing-sound" preload="auto" loop>
         <source src="./assets/sounds/pencil-29272.mp3" type="audio/mpeg">
