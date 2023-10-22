@@ -32,14 +32,13 @@
                         <hr id="header-seperator">
                     </div>
                 </div>
-
                 <!-- Landing Page -->
                 <div id="landing-section" class="section mb-4 col-10 col-md-9 col-lg-6 mx-auto">
                     <p class="text-center mb-3">Welcome to the Spooky Story Generator. Are you ready to create your
                         Halloween short story?</p>
                     <p class="text-center mb-4">Click the button if you dare!</p>
                     <div class="text-center mb-4">
-                        <button id="start-button" class="btn btn-primary">Start</button>
+                        <button id="start-button" class="consistent-btn btn btn-primary">Start</button>
                     </div>
                 </div>
 
@@ -70,7 +69,7 @@
                         </div>
                     </div>
                     <div class="text-center mb-4">
-                        <button id="foundation-next-button" class="btn btn-primary">Next</button>
+                        <button id="foundation-next-button" class="consistent-btn btn btn-primary">Next</button>
                     </div>
                 </div>
 
@@ -86,7 +85,7 @@
                         </div>
 
                         <div class="text-center m-4">
-                            <button id="character-next-button" class="btn btn-primary">Next</button>
+                            <button id="character-next-button" class="consistent-btn btn btn-primary">Next</button>
                         </div>
                     </div>
                 </div>
@@ -102,26 +101,25 @@
                         </div>
                         <div class="row justify-content-center mb-4">
                             <div class="col-12 text-center">
-                                <button id="yes-button" class="p-3 btn">Yes</button>
-                                <button id="no-button" class=" p-3 btn btn-danger">No</button>
+                                <button id="yes-button" class="p-3 btn"><strong>Yes</strong></button>
+                                <button id="no-button" class=" p-3 btn"><strong>No</strong></button>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-4">
                             <div class="col-12 text-center">
-                                <button id="age-proceed-button" class="btn btn-primary">Proceed</button>
+                                <button id="age-proceed-button" class="consistent-btn btn btn-primary">Proceed</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Generate Story -->
-                <div id="generate-story" class="section col-lg-6 mx-auto d-none mb-4">
-                    <p class="text-center warning-text mb-4">Dare you summon the tale from the depths of the
-                        unknown?
-                        Once
-                        revealed, its shadows might just cling to your very soul...</p>
-                    <div class="btn-container text-center mb-4">
-                        <button id="reset-button" class="btn btn-secondary">Reset</button>
-                        <button class="btn btn-primary">Generate Story</button>
+                <div id="generate-story" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
+                    <p class="text-center warning-text mb-4">Dare you summon the tale from the depths of the unknown?
+                        Once revealed, its shadows might just cling to your very soul...</p>
+                    <div class="btn-container text-center mb-4 mt-auto">
+                        <button class="btn btn-primary consistent-btn">Generate Story</button>
+                        <button id="reset-button"
+                            class="btn btn-secondary mt-2 mt-sm-0 mt-md-0 order-md-0 consistent-btn">Reset</button>
                     </div>
                 </div>
 
@@ -132,8 +130,8 @@
                     </div>
                     <div id="generated-story" class="story-output mt-1 mb-3 px-4"></div>
                     <div class="text-center">
-                        <button id="about-us-button" class="btn btn-secondary mb-4">About us</button>
-                        <button id="start-over-button" class="btn btn-secondary mb-4">Start Over</button>
+                        <button id="about-us-button" class="consistent-btn btn btn-secondary mb-4">About us</button>
+                        <button id="start-over-button" class="consistent-btn btn btn-secondary mb-4">Start Over</button>
                     </div>
                 </div>
 
@@ -143,13 +141,17 @@
                         <h3 class="mb-0">This is us</h3>
                     </div>
                     <div id="about-us-section" class="story-output mt-1 mb-3 px-4">
-                        <img src="./assets/images/Alex.jpg" width="150" height="150" class="img-fluid rounded mx-auto d-block" alt="...">
-                        <img src="./assets/images/Sara.jpg" width="150" height="150" class="img-fluid rounded mx-auto d-block" alt="...">
-                        <img src="./assets/images/sam.jpg" width="150" height="150" class="img-fluid rounded mx-auto d-block" alt="...">
-                        <img src="./assets/images/Niclas.jpg" width="150" height="150" class="img-fluid rounded mx-auto d-block" alt="...">
+                        <img src="./assets/images/Alex.jpg" width="150" height="150"
+                            class="img-fluid rounded mx-auto d-block" alt="...">
+                        <img src="./assets/images/Sara.jpg" width="150" height="150"
+                            class="img-fluid rounded mx-auto d-block" alt="...">
+                        <img src="./assets/images/sam.jpg" width="150" height="150"
+                            class="img-fluid rounded mx-auto d-block" alt="...">
+                        <img src="./assets/images/Niclas.jpg" width="150" height="150"
+                            class="img-fluid rounded mx-auto d-block" alt="...">
                     </div>
                     <div class="text-center">
-                        <button id="start-over-button" class="btn btn-secondary mb-4">Start Over</button>
+                        <button id="start-over-button" class="consistent-btn btn btn-secondary mb-4">Start Over</button>
                     </div>
                 </div>
                 <!-- <div class="row py-4 w-50 mx-auto">
@@ -163,16 +165,17 @@
                     <input type="range" class="audio-volume-slider" id="volumeSlider" min="0" max="1" step="0.1"
                         value="1">
                 </div> -->
-                
+
             </div>
-            <div id="audio-control" class="row py-4 w-50 mx-auto">
-                <audio controls autoplay loop>
-                    <!-- <source src="./assets/media/680130__strangehorizon__another_cask_of_amontillado (1).mp3" type="audio/mpeg"> -->
+            <div class="row py-4 w-50 mx-auto">
+                <audio controls loop>
+                    <source src="./assets/media/680130__strangehorizon__another_cask_of_amontillado (1).mp3"
+                        type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
         </div>
-        
+
     </div>
     <audio id="typing-sound" preload="auto" loop>
         <source src="./assets/sounds/pencil-29272.mp3" type="audio/mpeg">
