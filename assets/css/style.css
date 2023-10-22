@@ -65,16 +65,8 @@ img {
 ------- Layout styles -------
 -------------------------- */
 
-/* #bg-image {
-  background-image: url('../images/halloween-2837936_1920.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center center;  
-  transition: background-size 1.8s;
-} */
-
 #container {
-    background-color: rgba(9, 7, 10, 0.5);
+    background-color: rgba(9, 7, 10, 0.8);
     /* Adjust the color and alpha (0.7) as needed */
     padding-top: 10px;
     padding-bottom: 10px;
@@ -86,13 +78,38 @@ img {
     min-height: 400px;
     opacity: 1;
     transition: opacity 2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;  /* Add this */
+}
+
+#landing-section,
+#story-foundation,
+#character-generation,
+#age-verification,
+#generate-story,
+#display-story,
+#about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.btn-container {
+    margin-top: auto;
+}
+.consistent-btn {
+    width: 150px;  /* Or whatever width you find appropriate */
 }
 
 .borders {
     border: solid 5px;
     border-top-left-radius: 50% 15% !important;
     border-top-right-radius: 50% 15% !important;
-    box-shadow: 5px 5px 59px orange;
+    box-shadow: 5px 5px 59px rgb(255, 165, 0);
 }
 
 #header-seperator {
@@ -104,8 +121,8 @@ img {
 -------------------------- */
 
 .btn, #reset-button {
-    background-color: #ff6600;
-    border-color: #ff6600;
+    background-color: rgb(255, 102, 0);
+    border-color: rgb(255, 102, 0);
     color: #000;
 }
 
@@ -114,19 +131,36 @@ img {
     background-color:  rgba(9, 7, 10, 0.5);
     border-color: #000;
     color: rgb(255, 102, 0);
-    box-shadow: 0px 0px 20px orange;
+    box-shadow: 0px 0px 20px rgb(255, 165, 0);
 }
 
 
 
 /* Age Verification button styles */
 #yes-button {
-    background-color: rgb(255, 102, 0, 0.2);
+    background-color: rgb(255, 102, 0, 0.5);
 }
 
 #no-button {
-    background-color: rgb(255, 102, 0, 0.3);
+    background-color: rgb(255, 102, 0, 0.5);
 }
+
+#yes-button:focus, #yes-button:active,
+#no-button:focus, #no-button:active {
+    box-shadow: 0px 0px 20px rgb(255, 165, 0);
+    color: rgb(255, 102, 0);
+    border-color: #000;
+}
+
+/* Style specifically for the audio buttons */
+.audio-btn {
+    margin-right: 10px;
+}
+
+/* Style for the volume slider, if needed */
+/* .audio-volume-slider { */
+    /* Add any specific styles for the volume slider here */
+/* } */
 
 
 /* Media queries */
@@ -139,12 +173,9 @@ img {
     }
 }
 
-/* Style specifically for the audio buttons */
-.audio-btn {
-    margin-right: 10px;
+@media (min-width: 474px) and (max-width: 767px) {
+    #reset-button {
+        margin-top: 0 !important;
+    }
 }
 
-/* Style for the volume slider, if needed */
-/* .audio-volume-slider { */
-    /* Add any specific styles for the volume slider here */
-/* } */
