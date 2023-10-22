@@ -127,6 +127,7 @@ Link to live website: [Spooky story creation](https://avtpepper.github.io/hallow
 - Niclas [NiclO1337](https://github.com/NiclO1337)
 
 ## Credits
+We'd like to ...
 
 ### Tutorials
 
