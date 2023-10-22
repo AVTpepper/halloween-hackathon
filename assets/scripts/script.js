@@ -220,7 +220,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const spookinessType = spookinessTypeInput.value;
     const numCharacters = parseInt(numCharactersInput.value, 10);
 
+    let storySection = document.querySelector('#generate-story');
+    storySection.classList.add('fade-out');
+    setTimeout(() => {
+        storySection.style.display = 'none';
+        document.querySelector('#creating-story-info').style.display = 'block';
+    }, 6000);
+
     document.getElementById("creating-story-info").style.opacity = "1";
+
+    document.getElementById("generate-story").style.opacity = "0";
 
     const characters = [];
     for (let i = 1; i <= numCharacters; i++) {
@@ -301,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, delay);
   }
 
-  typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
+  typingSound.volume = 0.3; // 0.5 is 50% volume (range is 0 to 1)
 });
 
 let typingInterval;
