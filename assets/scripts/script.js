@@ -30,31 +30,70 @@ document.addEventListener("DOMContentLoaded", () => {
   const retryButton = document.getElementById("retry-button");
   const generatedStoryDiv = document.getElementById("generated-story");
 
-  // Opening sequece transitions
-  window.setTimeout(transformBackground, 100);
-  // window.setTimeout(showHeading, 1500);
-  window.setTimeout(showContainer, 1000);
-  // window.setTimeout(showSurpriceElement, 4000);
 
-  function transformBackground() {
-    document.getElementById("bg-image").style.backgroundSize = "120%";
-    document.getElementById("bg-image").style.backgroundSize = "120%";
+
+
+  // Opening sequence transitions
+  //  window.setTimeout(transformBackground, 100);
+  window.setTimeout(showHeadingWelcome, 1500);
+  window.setTimeout(showHeadingTo, 2700);
+  window.setTimeout(showHeadingSpooky, 3600);
+  window.setTimeout(fadeOutHeadings, 5000);
+  window.setTimeout(hideHeadings, 6200);
+  window.setTimeout(showContainer, 6300);
+  window.setTimeout(fadeInContainer, 6400);
+  window.setTimeout(showSurpriceElement, 9000);
+  window.setTimeout(fadeOutWerewolf, 10000);
+  window.setTimeout(hideWerewolf, 11600);
+
+  // function transformBackground() {
+  //   document.getElementById("bg-image").style.backgroundSize = "120%";
+  // }
+
+  function showHeadingWelcome() {
+    document.getElementById('welcome').style.opacity = '1';
   }
 
-  // function showHeading() {
-  //   document.getElementById('heading').style.opacity = '1';
-  // }
+  function showHeadingTo() {
+    document.getElementById('welcome-to').style.opacity = '1';
+  }
+
+  function showHeadingSpooky() {
+    document.getElementById('spooky-story-creation').style.opacity = '1';
+  }
+
+  function fadeOutHeadings() {
+    document.getElementById('welcome-headings').style.opacity = '0';
+  }
+
+  function hideHeadings() {
+    document.getElementById('welcome-headings').style.display = 'none';
+  }
 
   function showContainer() {
-    document.getElementById("container").style.opacity = "1";
-    document.getElementById("container").style.opacity = "1";
+    let container = document.getElementById("container");
+    container.style.display = 'block';
   }
 
-  // function showSurpriceElement() {
-  //   const pumpkins = document.getElementsByClassName('pumpkins');
-  //   for (let pumpkin of pumpkins) {
-  //     pumpkin.style.opacity = '1';
-  // }
+  function fadeInContainer() {
+    let container = document.getElementById("container");
+    container.style.animationName = 'hero-zoom';
+    container.style.opacity = "1";
+  }
+
+  function showSurpriceElement() {
+    document.getElementById('audio-control').style.opacity = "1";
+    document.getElementById('werewolf-img').style.display = "block";    
+  }
+
+  function fadeOutWerewolf() {
+    document.getElementById('werewolf-img').style.opacity = "0";    
+  }
+
+  function hideWerewolf() {
+    document.getElementById('werewolf-img').style.display = "none";    
+  }
+
 
   // EVENT LISTENERS
 
