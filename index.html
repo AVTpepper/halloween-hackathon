@@ -1,199 +1,326 @@
 <!DOCTYPE html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Spooky story creation is an website that generates scary stories 
+      with OpenAI. Stories are tailored to the the users preferred specifications."
+    />
+    <meta name="keywords" content="Halloween, spooky story generator">
     <title>Spooky Story Creation</title>
     <!-- Link to Bootstrap 5 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
     <!-- Stylesheet for custom styles -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <!-- Favicon -->
-    <link href="assets/favicon/apple-touch-icon.png" rel="icon" sizes="180x180" >
-    <link href="assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" >
-    <link href="assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16" >
-</head>
+    <link
+      href="assets/favicon/apple-touch-icon.png"
+      rel="icon"
+      sizes="180x180"
+    />
+    <link href="assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" />
+    <link href="assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16" />
+  </head>
 
-<body>
-    
-    <div id="bg-image" class="container d-flex justify-content-center align-items-center min-vh-100">
-        
-        <div class="col-10 col-md-9 col-lg-6 m-4">
-            <div id="welcome-headings" class="text-center">
-                <h1 id="welcome" class="mb-0">Welcome</h1>
-                <h1 id="welcome-to">to</h1>
-                <h1 id="spooky-story-creation">Spooky story<br>creation</h1>
+  <body>
+    <div
+      id="bg-image"
+      class="container d-flex justify-content-center align-items-center min-vh-100"
+    >
+      <div class="col-10 col-md-9 col-lg-6 m-4">
+        <div id="welcome-headings" class="text-center">
+          <h1 id="welcome" class="mb-0">Welcome</h1>
+          <h1 id="welcome-to">to</h1>
+          <h1 id="spooky-story-creation">Spooky story<br />creation</h1>
+        </div>
+        <img
+          id="werewolf-img"
+          src="assets\images\werewolf-8070653.png"
+          alt="Image of werewolf"
+        />
+        <div id="container" class="borders rounded bg-purple">
+          <div>
+            <h2 class="text-center mt-3 mb-2">Spooky Story</h2>
+            <div class="squared-circle text-center mb-4">
+              <h2>Creation</h2>
+              <hr id="header-seperator" />
             </div>
-            <img id="werewolf-img" src="assets\images\werewolf-8070653.png" alt="Image of werewolf">
-            <div id="container" class="borders rounded bg-purple">
-                <div>
-                    <h2 class="text-center mt-3 mb-2">Spooky Story</h2>
-                    <div class="squared-circle text-center mb-4">
-                        <h2>Creation</h2>
-                        <hr id="header-seperator">
-                    </div>
-                </div>
-                <!-- Landing Page -->
-                <div id="landing-section" class="section mb-4 col-10 col-md-9 col-lg-6 mx-auto">
-                    <p class="text-center mb-3">Welcome to the Spooky Story Generator. Are you ready to create your
-                        Halloween short story?</p>
-                    <p class="text-center mb-4">Click the button if you dare!</p>
-                    <div class="text-center mb-4">
-                        <img src="./assets/images/scary-pumpkin.webp" alt="big scary pumpkin" id="tryme" class="hide">
-                        <button id="start-button" class="consistent-btn btn btn-primary">Start</button>
-                    </div>
-                </div>
+          </div>
+          <!-- Landing Page -->
+          <div
+            id="landing-section"
+            class="section mb-4 col-10 col-md-9 col-lg-6 mx-auto"
+          >
+            <p class="text-center mb-3">
+              Welcome to the Spooky Story Generator. Are you ready to create
+              your Halloween short story?
+            </p>
+            <p class="text-center mb-4">Click the button if you dare!</p>
+            <div class="text-center mb-4">
+              <img
+                src="./assets/images/scary-pumpkin.webp"
+                alt="big scary pumpkin"
+                id="tryme"
+                class="hide"
+              />
+              <button id="start-button" class="consistent-btn btn btn-primary">
+                Start
+              </button>
+            </div>
+          </div>
 
-                <!-- Story Foundation -->
-                <div id="story-foundation" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
-                    <div class="squared-circle text-center mb-4">Story Foundation</div>
-                    <div class="row mb-4">
-                        <div class="col-12 mb-4">
-                            <div class="form-group">
-                                <label for="spookiness-type">Type of Spookiness</label>
-                                <select id="spookiness-type" class="form-control">
-                                    <option>Comedy Horror</option>
-                                    <option>Horror</option>
-                                    <option>Thriller</option>
-                                    <option>Romantic Horror</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="num-characters">Number of Characters</label>
-                                <select id="num-characters" class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center mb-4">
-                        <button id="foundation-next-button" class="consistent-btn btn btn-primary">Next</button>
-                    </div>
+          <!-- Story Foundation -->
+          <div
+            id="story-foundation"
+            class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto"
+          >
+            <div class="squared-circle text-center mb-4">Story Foundation</div>
+            <div class="row mb-4">
+              <div class="col-12 mb-4">
+                <div class="form-group">
+                  <label for="spookiness-type">Type of Spookiness</label>
+                  <select id="spookiness-type" class="form-control">
+                    <option>Comedy Horror</option>
+                    <option>Horror</option>
+                    <option>Thriller</option>
+                    <option>Romantic Horror</option>
+                  </select>
                 </div>
-
-                <!-- Character Generation -->
-                <div id="character-generation" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
-                    <div class="squared-circle text-center m-4 mb-1">Character Generation</div>
-                    <div class="row mb-4 justify-content-center">
-
-                        <div class="form-group">
-                            <div id="characters-container">
-                                <!-- Character inputs will be generated here -->
-                            </div>
-                        </div>
-
-                        <div class="text-center m-4">
-                            <button id="character-next-button" class="consistent-btn btn btn-primary">Next</button>
-                        </div>
-                    </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="num-characters">Number of Characters</label>
+                  <select id="num-characters" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
                 </div>
+              </div>
+            </div>
+            <div class="text-center mb-4">
+              <button
+                id="foundation-next-button"
+                class="consistent-btn btn btn-primary"
+              >
+                Next
+              </button>
+            </div>
+          </div>
 
-                <!-- Age Verification -->
-                <div id="age-verification" class="section d-none mb-4">
+          <!-- Character Generation -->
+          <div
+            id="character-generation"
+            class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto"
+          >
+            <div class="squared-circle text-center m-4 mb-1">
+              Character Generation
+            </div>
+            <div class="row mb-4 justify-content-center">
+              <div class="form-group">
+                <div id="characters-container">
+                  <!-- Character inputs will be generated here -->
+                </div>
+              </div>
 
-                    <div class="row mb-4 justify-content-center">
-                        <div class="col-md-6 mb-4">
-                            <div class="text-center mb-4">
-                                <p>Are you older than 18?</p>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center mb-4">
-                            <div class="col-12 text-center">
-                                <button id="yes-button" class="p-3 btn"><strong>Yes</strong></button>
-                                <button id="no-button" class=" p-3 btn"><strong>No</strong></button>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center mb-4">
-                            <div class="col-12 text-center">
-                                <button id="age-proceed-button" class="consistent-btn btn btn-primary">Proceed</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Generate Story -->
-                <div id="generate-story" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
-                    <p class="text-center warning-text mb-4">Dare you summon the tale from the depths of the unknown?
-                        Once revealed, its shadows might just cling to your very soul...</p>
-                    <div class="btn-container text-center mb-4 mt-auto">
-                        <button class="btn btn-primary consistent-btn">Generate Story</button>
-                        <button id="reset-button"
-                            class="btn btn-secondary mt-2 mt-sm-0 mt-md-0 order-md-0 consistent-btn">Reset</button>
-                    </div>
-                    <p id="creating-story-info" class="text-center warning-text mb-3">Creating your story...</p>
-                </div>
+              <div class="text-center m-4">
+                <button
+                  id="character-next-button"
+                  class="consistent-btn btn btn-primary"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
 
-                <!-- Display Story -->
-                <div id="display-story" class="section d-none">
-                    <div class="squared-circle text-center mb-3">
-                        <h3 class="mb-0">Your Spooky Story</h3>
-                    </div>
-                    <div id="generated-story" class="story-output mt-1 mb-3 px-4"></div>
-                    <div class="text-center">
-                        <button id="about-us-button" class="consistent-btn btn btn-secondary mb-4">About us</button>
-                        <button id="start-over-button" class="consistent-btn btn btn-secondary mb-4">Start Over</button>
-                    </div>
+          <!-- Age Verification -->
+          <div id="age-verification" class="section d-none mb-4">
+            <div class="row mb-4 justify-content-center">
+              <div class="col-md-6 mb-4">
+                <div class="text-center mb-4">
+                  <p>Are you older than 18?</p>
                 </div>
+              </div>
+              <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                  <button id="yes-button" class="p-3 btn">
+                    <strong>Yes</strong>
+                  </button>
+                  <button id="no-button" class="p-3 btn">
+                    <strong>No</strong>
+                  </button>
+                </div>
+              </div>
+              <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                  <button
+                    id="age-proceed-button"
+                    class="consistent-btn btn btn-primary"
+                  >
+                    Proceed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Generate Story -->
+          <div
+            id="generate-story"
+            class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto"
+          >
+            <p class="text-center warning-text mb-4">
+              Dare you summon the tale from the depths of the unknown? Once
+              revealed, its shadows might just cling to your very soul...
+            </p>
+            <div class="btn-container text-center mb-4 mt-auto">
+              <button class="btn btn-primary consistent-btn">
+                Generate Story
+              </button>
+              <button
+                id="reset-button"
+                class="btn btn-secondary mt-2 mt-sm-0 mt-md-0 order-md-0 consistent-btn"
+              >
+                Reset
+              </button>
+            </div>
+            <p id="creating-story-info" class="text-center warning-text mb-3">
+              Creating your story...
+            </p>
+          </div>
 
-                <!--About Us Section-->
-                <div id="about-us" class="section d-none">
-                    <div class="squared-circle text-center mb-3">
-                        <h3 class="mb-0">Thank you for trying out our scary story generator! <br> This is us:</h3>
-                    </div>
-                    <div id="about-us-section" class="story-output mt-1 mb-3 px-4">
-                        <img src="./assets/images/Alex.jpg" width="150" height="150" class="image img-fluid rounded mx-auto d-block" alt="...">
-                        <p class="text-center">
-                            Alex
-                            <a href="https://github.com/AVTpepper" target="_blank">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            /
-                            <a href="https://www.linkedin.com/in/alexander-tastad/" target="_blank">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </p>
-                        <img src="./assets/images/Sara.jpg" width="150" height="150" class="imgage img-fluid rounded mx-auto d-block" alt="...">
-                        <p class="text-center">
-                            Sara
-                            <a href="https://github.com/sbojorge" target="_blank">
-                                <i class="fa-brands fa-github"></i>
-                            </a>/
-                            <a href="https://www.linkedin.com/in/sara-bojorge-66343715b/" target="_blank">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </p>
-                        <img src="./assets/images/sam.jpg" width="150" height="150" class="image img-fluid rounded mx-auto d-block" alt="...">
-                        <p class="text-center">
-                            Samuel
-                            <a href="https://github.com/FullstackSammy" target="_blank">
-                                <i class="fa-brands fa-github"></i>
-                            </a>/
-                            <a href="https://www.linkedin.com/in/samuel-n%C3%A4sstr%C3%B6m-15563620a/" target="_blank">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </p>
-                        <img src="./assets/images/Niclas.jpg" width="150" height="150" class="image img-fluid rounded mx-auto d-block" alt="...">
-                        <p class="text-center">
-                            Niclas
-                            <a href="https://github.com/NiclO1337" target="_blank">
-                                <i class="fa-brands fa-github"></i>
-                            </a>/
-                            <a href="https://www.linkedin.com/in/niclas-hugdahl-ivmark-236716a1/" target="_blank">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </p>
-                    </div>
-                    <div class="text-center">
-                        <button id="back-button" class=" btn btn-secondary mb-4">Back</button>
-                        <button id="retry-button" class="consistent-btn btn btn-secondary mb-4">Start Over</button>
-                    </div>
-                </div>
-                <!-- <div class="row py-4 w-50 mx-auto">
+          <!-- Display Story -->
+          <div id="display-story" class="section d-none">
+            <div class="squared-circle text-center mb-3">
+              <h3 class="mb-0">Your Spooky Story</h3>
+            </div>
+            <div id="generated-story" class="story-output mt-1 mb-3 px-4"></div>
+            <div class="text-center">
+              <button
+                id="about-us-button"
+                class="consistent-btn btn btn-secondary mb-4"
+              >
+                About us
+              </button>
+              <button
+                id="start-over-button"
+                class="consistent-btn btn btn-secondary mb-4"
+              >
+                Start Over
+              </button>
+            </div>
+          </div>
+
+          <!--About Us Section-->
+          <div id="about-us" class="section d-none">
+            <div class="squared-circle text-center mb-3">
+              <h3 class="mb-0">
+                Thank you for trying out our scary story generator! <br />
+                This is us:
+              </h3>
+            </div>
+            <div id="about-us-section" class="story-output mt-1 mb-3 px-4">
+              <img
+                src="./assets/images/Alex.jpg"
+                width="150"
+                height="150"
+                class="image img-fluid rounded mx-auto d-block"
+                alt="..."
+              />
+              <p class="text-center">
+                Alex
+                <a href="https://github.com/AVTpepper" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                /
+                <a
+                  href="https://www.linkedin.com/in/alexander-tastad/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </p>
+              <img
+                src="./assets/images/Sara.jpg"
+                width="150"
+                height="150"
+                class="imgage img-fluid rounded mx-auto d-block"
+                alt="..."
+              />
+              <p class="text-center">
+                Sara
+                <a href="https://github.com/sbojorge" target="_blank">
+                  <i class="fa-brands fa-github"></i> </a
+                >/
+                <a
+                  href="https://www.linkedin.com/in/sara-bojorge-66343715b/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </p>
+              <img
+                src="./assets/images/sam.jpg"
+                width="150"
+                height="150"
+                class="image img-fluid rounded mx-auto d-block"
+                alt="..."
+              />
+              <p class="text-center">
+                Samuel
+                <a href="https://github.com/FullstackSammy" target="_blank">
+                  <i class="fa-brands fa-github"></i> </a
+                >/
+                <a
+                  href="https://www.linkedin.com/in/samuel-n%C3%A4sstr%C3%B6m-15563620a/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </p>
+              <img
+                src="./assets/images/Niclas.jpg"
+                width="150"
+                height="150"
+                class="image img-fluid rounded mx-auto d-block"
+                alt="..."
+              />
+              <p class="text-center">
+                Niclas
+                <a href="https://github.com/NiclO1337" target="_blank">
+                  <i class="fa-brands fa-github"></i> </a
+                >/
+                <a
+                  href="https://www.linkedin.com/in/niclas-hugdahl-ivmark-236716a1/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </p>
+            </div>
+            <div class="text-center">
+              <button id="back-button" class="btn btn-secondary mb-4">
+                Back
+              </button>
+              <button
+                id="retry-button"
+                class="consistent-btn btn btn-secondary mb-4"
+              >
+                Start Over
+              </button>
+            </div>
+          </div>
+          <!-- <div class="row py-4 w-50 mx-auto">
                     <audio id="myAudio">
                         <source src="./assets/media/680130__strangehorizon__another_cask_of_amontillado (1).mp3"
                             type="audio/mpeg">
@@ -204,24 +331,23 @@
                     <input type="range" class="audio-volume-slider" id="volumeSlider" min="0" max="1" step="0.1"
                         value="1">
                 </div> -->
-
-            </div>
-            <div id="audio-control" class="row py-4 w-50 mx-auto">
-                <audio controls loop>
-                    <source src="./assets/media/680130__strangehorizon__another_cask_of_amontillado (1).mp3"
-                        type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
         </div>
-
+        <div id="audio-control" class="row py-4 w-50 mx-auto">
+          <audio controls loop>
+            <source
+              src="./assets/media/680130__strangehorizon__another_cask_of_amontillado (1).mp3"
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
     </div>
     <audio id="typing-sound" preload="auto" loop>
-        <source src="./assets/sounds/pencil-29272.mp3" type="audio/mpeg">
+      <source src="./assets/sounds/pencil-29272.mp3" type="audio/mpeg" />
     </audio>
-</body>
+  </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/scripts/script.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/scripts/script.js"></script>
 </html>
