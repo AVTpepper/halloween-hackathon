@@ -18,6 +18,10 @@
 ------- Global styles -------
 -------------------------- */
 
+a {
+    text-decoration: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -61,8 +65,21 @@ audio::-webkit-media-controls-time-remaining-display {
   color: #fff;
 }
 
+/* about us IMAGES */
+
+.fa-github, .fa-linkedin {
+    color: #ff6600;
+}
+  
+.fa-github:hover, .fa-linkedin:hover {
+    color: #eee;
+}
+
 img {
-  margin: 10px;
+    margin: 5px;
+    animation-name: hero-zoom;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 #werewolf-img {
@@ -215,6 +232,11 @@ img {
     background: url("../images/moon-outdoors-pumpkin.webp") bottom right fixed;
     background-size: cover;
   }
+
+img {
+    width: 80px;
+    height: 80px;
+}
 
   #werewolf-img {
     right: 25%;
