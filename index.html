@@ -40,23 +40,47 @@
                     <div class="row mb-4">
                         <div class="col-12 mb-4">
                             <div class="form-group">
-                                <label for="spookiness-type">Type of Spookiness</label>
-                                <select id="spookiness-type" class="form-control">
-                                    <option>Comedy Horror</option>
-                                    <option>Horror</option>
-                                    <option>Thriller</option>
-                                    <option>Romantic Horror</option>
-                                </select>
+                                <label>Type of Spookiness</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="spookiness-type"
+                                        id="comedyHorror" value="Comedy Horror" checked>
+                                    <label class="form-check-label" for="comedyHorror">Comedy Horror</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="spookiness-type" id="horror"
+                                        value="Horror">
+                                    <label class="form-check-label" for="horror">Horror</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="spookiness-type" id="thriller"
+                                        value="Thriller">
+                                    <label class="form-check-label" for="thriller">Thriller</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="spookiness-type"
+                                        id="romanticHorror" value="Romantic Horror">
+                                    <label class="form-check-label" for="romanticHorror">Romantic Horror</label>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="num-characters">Number of Characters</label>
-                                <select id="num-characters" class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
+                                <label>Number of Characters</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="num-characters" id="oneCharacter"
+                                        value="1" checked>
+                                    <label class="form-check-label" for="oneCharacter">1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="num-characters"
+                                        id="twoCharacters" value="2">
+                                    <label class="form-check-label" for="twoCharacters">2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="num-characters"
+                                        id="threeCharacters" value="3">
+                                    <label class="form-check-label" for="threeCharacters">3</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -64,6 +88,8 @@
                         <button id="foundation-next-button" class="consistent-btn btn btn-primary">Next</button>
                     </div>
                 </div>
+
+
 
                 <!-- Character Generation -->
                 <div id="character-generation" class="section d-none mb-4 col-10 col-md-9 col-lg-6 mx-auto">
@@ -109,7 +135,7 @@
                     <p class="text-center warning-text mb-4">Dare you summon the tale from the depths of the unknown?
                         Once revealed, its shadows might just cling to your very soul...</p>
                     <div class="btn-container text-center mb-4 mt-auto">
-                        <button class="btn btn-primary consistent-btn">Generate Story</button>
+                        <button id="generate-story" class="btn btn-primary consistent-btn">Generate Story</button>
                         <button id="reset-button"
                             class="btn btn-secondary mt-2 mt-sm-0 mt-md-0 order-md-0 consistent-btn">Reset</button>
                     </div>
