@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   For instance, you can store the API key in pieces and then combine them at runtime. */
   const part1 = "sk-Rsx0wYVCbTOclMMitntQT3B";
   const part2 = "lbkFJl1s7nH872Fr01UG149UD";
-
   const apiKey = part1 + part2;
 
   const spookinessTypeInput = document.getElementById("spookiness-type");
@@ -129,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
   backButton.addEventListener("click", () => {
     goToSection("display-story");
   });
+  // For the last start-over button to reset the form and go again.
   retryButton.addEventListener("click", resetForm);
 
   let userSelection = null; // this variable will store the user's choice
@@ -181,9 +181,11 @@ document.addEventListener("DOMContentLoaded", () => {
       nameLabel.className = "block";
 
       const nameInput = document.createElement("input");
+      nameInput.placeholder = 'Enter a name or leave blank'
       nameInput.id = `character${i}-name`;
       nameInput.type = "text";
       nameInput.className = "form-control";
+      nameInput.required = true;
 
       const sexLabel = document.createElement("label");
       sexLabel.htmlFor = `character${i}-sex`;
@@ -219,40 +221,35 @@ document.addEventListener("DOMContentLoaded", () => {
     createCharacterInputs(numCharactersInput.value);
   });
 
-  generateStoryButton.addEventListener("click", () => {
-    generatedStoryDiv.innerHTML =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-    goToSection("display-story");
-  });
-
-  aboutUsButton.addEventListener("click", () => {
+  aboutUsButton.addEventListener('click', () => {
     goToSection("about-us");
   });
-  // generateStoryButton.addEventListener("click", async () => {
-  //   const spookinessType = spookinessTypeInput.value;
-  //   const numCharacters = parseInt(numCharactersInput.value, 10);
+  
+  generateStoryButton.addEventListener("click", async () => {
+    const spookinessType = spookinessTypeInput.value;
+    const numCharacters = parseInt(numCharactersInput.value, 10);
 
-  //   const characters = [];
-  //   for (let i = 1; i <= numCharacters; i++) {
-  //     const name = document.getElementById(`character${i}-name`).value;
-  //     const sex = document.getElementById(`character${i}-sex`).value;
-  //     characters.push({ name, sex });
-  //   }
+    const characters = [];
+    for (let i = 1; i <= numCharacters; i++) {
+      const name = document.getElementById(`character${i}-name`).value;
+      const sex = document.getElementById(`character${i}-sex`).value;
+      characters.push({ name, sex });
+    }
 
-  //   let prompt = `Create a short story in the ${spookinessType} genre. `;
-  //   prompt += `The story should have ${numCharacters} main character(s): `;
-  //   characters.forEach((char, index) => {
-  //     prompt += `${char.name} (${char.sex})${
-  //       index === characters.length - 1 ? "." : ", "
-  //     }`;
-  //   });
-  //   prompt += "\n\nStory: ";
+    let prompt = `Create a short story in the ${spookinessType} genre. `;
+    prompt += `The story should have ${numCharacters} main character(s): `;
+    characters.forEach((char, index) => {
+      prompt += `${char.name} (${char.sex})${
+        index === characters.length - 1 ? "." : ", "
+      }`;
+    });
+    prompt += "\n\nStory: ";
 
-  //   const storyText = await generateStory(prompt);
+    const storyText = await generateStory(prompt);
 
-  //   generatedStoryDiv.innerText = storyText;
-  //   goToSection("display-story");
-  // });
+    generatedStoryDiv.innerText = storyText;
+    goToSection("display-story");
+  });
 
   async function generateStory(prompt) {
     const response = await fetch("https://api.openai.com/v1/completions", {
