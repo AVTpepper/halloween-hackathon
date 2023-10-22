@@ -55,6 +55,10 @@ audio::-webkit-media-controls-time-remaining-display {
     color: #fff;
 }
 
+img {
+    margin: 10px;
+}
+
 
 
 /* --------------------------
