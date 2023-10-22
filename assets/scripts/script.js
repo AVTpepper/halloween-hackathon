@@ -156,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Reset the form and go back to landing
   function resetForm() {
+    document.getElementById('creating-story-info').style.opacity = '0';
     goToSection("landing-section");
   }
 
@@ -220,6 +221,8 @@ document.addEventListener("DOMContentLoaded", () => {
   generateStoryButton.addEventListener("click", async () => {
     const spookinessType = spookinessTypeInput.value;
     const numCharacters = parseInt(numCharactersInput.value, 10);
+
+    document.getElementById('creating-story-info').style.opacity = '1';
 
     const characters = [];
     for (let i = 1; i <= numCharacters; i++) {

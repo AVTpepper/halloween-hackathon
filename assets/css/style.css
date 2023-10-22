@@ -194,6 +194,11 @@ img {
   opacity: 0;
 }
 
+#creating-story-info {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
 /* --------------------------
 ---------- Buttons ----------
 -------------------------- */
