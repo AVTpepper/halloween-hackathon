@@ -70,7 +70,7 @@ Here user is thanked for visit the page and get to meet the creators.
 ## Features left to implement
 
 - Having the choice to read story with TTS (text to speech) for users with disabilities.
-
+- Form validation to check that user enters a name and selects age option.
 
 
 ## Testing
@@ -78,15 +78,15 @@ Here user is thanked for visit the page and get to meet the creators.
 | Feature tested | Expected outcome | Testing Performed | Result | Pass / fail | 
 | --- | --- | --- | --- | --- |
 | **Introduction screen** |
-| Introduction animation | Show animations | Load page |  |  |
-| Introduction screen | Display introduction screen | Load page and wait for animations to finish |  |  |
+| Introduction animation | Show animations after page is loaded | Load page | Animations show correctly | Pass |
+| Introduction screen | Display introduction screen | Load page and wait for animations to finish | Introduction screen is displayed | Pass |
 | **Story creation** |
-| User choices | Story changes based on user input | Make choices and generate story |  |  |
+| User choices | Story changes based on user input | Make choices and generate story | Story matching input choices is displayed | Pass |
 | **Story screen** |
-| Generate story | A story is generated | Click on "Generate story" |  |  |
-| Story anymation | Display story slowly and play sounds | Click on "Generate story" and wait |  |  |
+| Generate story | Create a story | Click on "Generate story" | Creates a story | Pass |
+| Story anymation | Display story slowly and play sounds | Click on "Generate story" and wait | A story is created and animates slowly while sound is playing | Pass |
 | **About us page** |
-| About us | Option to display about us page after story is finished | Wait for story to finish and click on "About us" |  |  |
+| About us | Option to display about us page after story is finished | Wait for story to finish and click on "About us" | Displays about us page | Pass |
 
 
 ## Bugs
@@ -127,7 +127,6 @@ Link to live website: [Spooky story creation](https://avtpepper.github.io/hallow
 - Niclas - [NiclO1337](https://github.com/NiclO1337)
 
 ## Credits
-We'd like to ...
 
 ### Tutorials
 
@@ -137,7 +136,7 @@ Audio element styling inspired from: [Shahed Nasser's blog](https://blog.shahedn
 
 #### Images
 
-Werewold image by <a href="https://pixabay.com/illustrations/werewolf-wolf-fantasia-horror-dark-8070653/">Sabrina Belle</a>
+Werewolf image by <a href="https://pixabay.com/illustrations/werewolf-wolf-fantasia-horror-dark-8070653/">Sabrina Belle</a>
 
 
 
