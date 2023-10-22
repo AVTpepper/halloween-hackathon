@@ -319,6 +319,7 @@ document.getElementById("muteButton").addEventListener("click", function () {
     muteText.textContent = "Unmute Writing Sound";
   }
 });
+
 document
   .getElementById("showFullStoryButton")
   .addEventListener("click", function () {
@@ -334,4 +335,21 @@ document
       .replace(/\n/g, "<br>"); // Replace single newlines with one line break
 
     storyElement.innerHTML = formattedText;
+  });
+
+document
+  .getElementById("start-over-button")
+  .addEventListener("click", function () {
+    let typingSound = document.getElementById("typing-sound");
+    let storyElement = document.getElementById("generated-story");
+
+    // Stop the typing sound
+    typingSound.pause();
+    typingSound.currentTime = 0;
+
+    // Clear the typing interval
+    clearInterval(typingInterval);
+
+    // Clear the content in the story div
+    storyElement.innerHTML = "";
   });
