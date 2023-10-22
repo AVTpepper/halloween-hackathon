@@ -1,7 +1,6 @@
 # **The Spookies**<br>Spooky story creation
 
-TODO: Add amiresponsive img
-![Amiresponsive image]()
+![Amiresponsive image](./assets/images/Responsive.png)
 
 Link to live website: [Spooky story creation](https://avtpepper.github.io/halloween-hackathon/)
 
@@ -136,6 +135,7 @@ Audio element styling inspired from: [Shahed Nasser's blog](https://blog.shahedn
 ### Media
 
 #### Images
-
+Background image comes from [rawpixel](https://www.rawpixel.com/)
 
 #### Audio
+Audio tracks come from [freesound](https://freesound.org/)
