@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Creepster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Creepster&display=swap");
 
 /* --------------------------
 --------- Animations --------
 -------------------------- */
 
 @keyframes hero-zoom {
-    from {
-        transform: scale(0.5);
-    }
+  from {
+    transform: scale(0.7);
+  }
 
-    to {
-        transform: scale(1);
-    }
+  to {
+    transform: scale(1);
+  }
 }
 
 /* --------------------------
@@ -19,51 +19,97 @@
 -------------------------- */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    /* min-height: 100vh; */
-    background: url('../images/park-anthropomorphic-jack-o-lantern.webp') center fixed;
-    background-color: #d2cbe3;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;    
-    color: #fd9702;
-    font-family: 'Arvo', sans-serif;
+  /* min-height: 100vh; */
+  background: url("../images/park-anthropomorphic-jack-o-lantern.webp") center
+    fixed;
+  background-color: #d2cbe3;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  color: #fd9702;
+  font-family: "Arvo", sans-serif;
 }
 
 /* Header styles */
+h1,
 h2,
 h3 {
-    font-family: 'Creepster', sans-serif;
+  font-family: "Creepster", sans-serif;
+}
+
+h1 {
+  font-size: 450%;
 }
 
 /* Media */
 audio {
-    width: 250px;
-    height: 35px;
+  width: 250px;
+  height: 35px;
 }
 
 audio::-webkit-media-controls-panel {
-    background-color: #77381A;
-    border: #77381A;
+  background-color: #77381a;
+  border: #77381a;
 }
 
 audio::-webkit-media-controls-time-remaining-display {
-    color: #fff;
+  color: #fff;
 }
 
 img {
-    margin: 10px;
+  margin: 10px;
 }
 
-
+#werewolf-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    height: 70%;
+    display: none;
+    transition: opacity 1.5s;
+}   
 
 /* --------------------------
 ------- Layout styles -------
 -------------------------- */
+
+/* #bg-image {
+  background-image: url('../images/halloween-2837936_1920.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;  
+  transition: background-size 1.8s;
+} */
+
+#welcome-headings {
+  color: rgb(29, 20, 32);
+  text-shadow: 0 0 10px orange;
+  transition: opacity 1.2s;
+}
+
+#welcome,
+#welcome-to,
+#spooky-story-creation {
+  opacity: 0;
+}
+
+#welcome {
+  transition: opacity 1.5s;
+}
+
+#welcome-to {
+  transition: opacity 1.2s;
+}
+
+#spooky-story-creation {
+  transition: opacity 0.7s;
+}
 
 #container {
     background-color: rgba(9, 7, 10, 0.8);
@@ -113,8 +159,8 @@ img {
 }
 
 #header-seperator {
-    height: 0.3rem;
-    opacity: 1;
+  height: 0.3rem;
+  opacity: 1;
 }
 /* --------------------------
 ---------- Buttons ----------
@@ -133,8 +179,6 @@ img {
     color: rgb(255, 102, 0);
     box-shadow: 0px 0px 20px rgb(255, 165, 0);
 }
-
-
 
 /* Age Verification button styles */
 #yes-button {
@@ -167,10 +211,16 @@ img {
 
 /* Small screens until 600px */
 @media screen and (max-width: 490px) {
-    body {
-        background: url('../images/moon-outdoors-pumpkin.webp')bottom right fixed;
-        background-size: cover;
-    }
+  body {
+    background: url("../images/moon-outdoors-pumpkin.webp") bottom right fixed;
+    background-size: cover;
+  }
+
+  #werewolf-img {
+    right: 25%;
+    height: 100%;
+}   
+
 }
 
 @media (min-width: 474px) and (max-width: 767px) {
