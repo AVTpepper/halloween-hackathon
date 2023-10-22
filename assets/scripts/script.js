@@ -29,9 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const retryButton = document.getElementById("retry-button");
   const generatedStoryDiv = document.getElementById("generated-story");
 
-
-
-
   // Opening sequence transitions
   //  window.setTimeout(transformBackground, 100);
   window.setTimeout(showHeadingWelcome, 1500);
@@ -50,49 +47,58 @@ document.addEventListener("DOMContentLoaded", () => {
   // }
 
   function showHeadingWelcome() {
-    document.getElementById('welcome').style.opacity = '1';
+    document.getElementById("welcome").style.opacity = "1";
   }
 
   function showHeadingTo() {
-    document.getElementById('welcome-to').style.opacity = '1';
+    document.getElementById("welcome-to").style.opacity = "1";
   }
 
   function showHeadingSpooky() {
-    document.getElementById('spooky-story-creation').style.opacity = '1';
+    document.getElementById("spooky-story-creation").style.opacity = "1";
   }
 
   function fadeOutHeadings() {
-    document.getElementById('welcome-headings').style.opacity = '0';
+    document.getElementById("welcome-headings").style.opacity = "0";
   }
 
   function hideHeadings() {
-    document.getElementById('welcome-headings').style.display = 'none';
+    document.getElementById("welcome-headings").style.display = "none";
   }
 
   function showContainer() {
     let container = document.getElementById("container");
-    container.style.display = 'flex';
+    container.style.display = "flex";
   }
 
   function fadeInContainer() {
     let container = document.getElementById("container");
-    container.style.animationName = 'hero-zoom';
+    container.style.animationName = "hero-zoom";
     container.style.opacity = "1";
   }
 
   function showSurpriceElement() {
-    document.getElementById('audio-control').style.opacity = "1";
-    document.getElementById('werewolf-img').style.display = "block";    
+    document.getElementById("audio-control").style.opacity = "1";
+    document.getElementById("werewolf-img").style.display = "block";
   }
 
   function fadeOutWerewolf() {
-    document.getElementById('werewolf-img').style.opacity = "0";    
+    document.getElementById("werewolf-img").style.opacity = "0";
   }
 
   function hideWerewolf() {
-    document.getElementById('werewolf-img').style.display = "none";    
+    document.getElementById("werewolf-img").style.display = "none";
   }
 
+  // function to popup the pumpkin for only 2 seconds
+  const show = (event) => {
+    console.log(event);
+    document.getElementById("tryme").style.display = "block";
+    window.setTimeout(
+      "document.getElementById('tryme').style.display = 'none';",
+      2000
+    );
+  };
 
   // EVENT LISTENERS
 
@@ -104,6 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
   startButton.addEventListener("click", () => {
     goToSection("story-foundation");
   });
+  // eventlistener for popping up the pumpkin
+  startButton.addEventListener("click", show);
   // For the Next button on Story Foundation
   foundationNextButton.addEventListener("click", () => {
     goToSection("character-generation");
@@ -117,11 +125,11 @@ document.addEventListener("DOMContentLoaded", () => {
     goToSection("generate-story");
   });
   // For the back button on the about section
-  backButton.addEventListener('click', () => {
+  backButton.addEventListener("click", () => {
     goToSection("display-story");
   });
   // For the last start-over button to reset the form and go again.
-  retryButton.addEventListener('click', resetForm);
+  retryButton.addEventListener("click", resetForm);
 
   let userSelection = null; // this variable will store the user's choice
   noButton.addEventListener("click", function () {
@@ -130,6 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
   yesButton.addEventListener("click", function () {
     userSelection = "yes";
   });
+
+  
 
   ageProceedButton.addEventListener("click", () => {
     const warningText = document.querySelector("#generate-story .warning-text");
