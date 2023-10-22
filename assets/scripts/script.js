@@ -30,22 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const generatedStoryDiv = document.getElementById("generated-story");
 
   // Opening sequence transitions
-  //  window.setTimeout(transformBackground, 100);
-  window.setTimeout(showHeadingWelcome, 1500);
-  window.setTimeout(showHeadingTo, 2700);
-  window.setTimeout(showHeadingSpooky, 3600);
-  window.setTimeout(fadeOutHeadings, 5000);
-  window.setTimeout(hideHeadings, 6200);
-  window.setTimeout(showContainer, 6300);
-  window.setTimeout(fadeInContainer, 6400);
-  window.setTimeout(showSurpriceElement, 9000);
-  window.setTimeout(fadeOutWerewolf, 10000);
-  window.setTimeout(hideWerewolf, 11600);
-
-  // function transformBackground() {
-  //   document.getElementById("bg-image").style.backgroundSize = "120%";
-  // }
-
+  window.setTimeout(showHeadingWelcome, 500);
+  window.setTimeout(showHeadingTo, 1700);
+  window.setTimeout(showHeadingSpooky, 2600);
+  window.setTimeout(fadeOutHeadings, 4000);
+  window.setTimeout(hideHeadings, 5200);
+  window.setTimeout(showContainer, 5300);  
+  window.setTimeout(fadeInContainer, 5350);
+  window.setTimeout(showSurpriceElement, 8000);
+  window.setTimeout(fadeOutWerewolf, 9500);
+  window.setTimeout(hideWerewolf, 10600);
+ 
   function showHeadingWelcome() {
     document.getElementById("welcome").style.opacity = "1";
   }
@@ -67,23 +62,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showContainer() {
-    let container = document.getElementById("container");
-    container.style.display = "flex";
+    document.getElementById("container").style.display = 'flex';
   }
 
   function fadeInContainer() {
-    let container = document.getElementById("container");
-    container.style.animationName = "hero-zoom";
-    container.style.opacity = "1";
+    document.getElementById("container").style.opacity = "1";
   }
 
   function showSurpriceElement() {
-    document.getElementById("audio-control").style.opacity = "1";
-    document.getElementById("werewolf-img").style.display = "block";
+    document.getElementById('audio-control').style.opacity = "1";
+    document.getElementById('werewolf-img').style.display = "block";
   }
 
   function fadeOutWerewolf() {
-    document.getElementById("werewolf-img").style.opacity = "0";
+    document.getElementById('werewolf-img').style.opacity = "0";
   }
 
   function hideWerewolf() {
