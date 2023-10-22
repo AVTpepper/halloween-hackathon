@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ageProceedButton = document.getElementById("age-proceed-button");
   const noButton = document.getElementById("no-button");
   const yesButton = document.getElementById("yes-button");
+  const aboutUsButton = document.getElementById("about-us-button")
   const generatedStoryDiv = document.getElementById("generated-story");
 
   // Opening sequece transitions
@@ -166,6 +167,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
     goToSection("display-story");
   });
+
+  aboutUsButton.addEventListener('click', () => {
+    goToSection("about-us");
+  })
   // generateStoryButton.addEventListener("click", async () => {
   //   const spookinessType = spookinessTypeInput.value;
   //   const numCharacters = parseInt(numCharactersInput.value, 10);
