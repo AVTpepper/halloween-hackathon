@@ -92,6 +92,12 @@ img {
   transition: opacity 1.5s;
 }
 
+/* pumpkin animation */
+.hide {
+  display: none;
+}
+
+
 /* --------------------------
 ------- Layout styles -------
 -------------------------- */
@@ -129,6 +135,23 @@ img {
 }
 
 #container {
+  background-color: rgba(9, 7, 10, 0.8);
+  /* Adjust the color and alpha (0.7) as needed */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* Add padding to improve visibility */
+  /* margin: 40px; */
+  animation-name: hero-zoom;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  min-height: 400px;
+  opacity: 1;
+  transition: opacity 2s;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%; /* Add this */
   background-color: rgba(9, 7, 10, 0.8);
   /* Adjust the color and alpha (0.7) as needed */
   padding-top: 10px;
