@@ -131,6 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
     userSelection = "yes";
   });
 
+  
+
   ageProceedButton.addEventListener("click", () => {
     const warningText = document.querySelector("#generate-story .warning-text");
 

@@ -1,7 +1,6 @@
 # **The Spookies**<br>Spooky story creation
 
-TODO: Add amiresponsive img
-![Amiresponsive image]()
+![Amiresponsive image](./assets/images/Responsive.png)
 
 Link to live website: [Spooky story creation](https://avtpepper.github.io/halloween-hackathon/)
 
@@ -128,6 +127,7 @@ Link to live website: [Spooky story creation](https://avtpepper.github.io/hallow
 - Niclas - [NiclO1337](https://github.com/NiclO1337)
 
 ## Credits
+We'd like to ...
 
 ### Tutorials
 
@@ -142,3 +142,4 @@ Werewold image by <a href="https://pixabay.com/illustrations/werewolf-wolf-fanta
 
 
 #### Audio
+Audio tracks come from [freesound](https://freesound.org/)
