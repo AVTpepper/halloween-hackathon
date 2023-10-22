@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const numCharactersInput = document.getElementById("num-characters");
   const charactersContainer = document.getElementById("characters-container");
   const generateStoryButton = document.querySelector(
-    "#generate-story .btn-primary"
+    "#generate-story .generate-btn"
   );
   const startButton = document.getElementById("start-button");
   const resetButton = document.getElementById("reset-button");
@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.setTimeout(showHeadingSpooky, 2600);
   window.setTimeout(fadeOutHeadings, 4000);
   window.setTimeout(hideHeadings, 5200);
-  window.setTimeout(showContainer, 5300);  
+  window.setTimeout(showContainer, 5300);
   window.setTimeout(fadeInContainer, 5350);
   window.setTimeout(showSurpriceElement, 8000);
   window.setTimeout(fadeOutWerewolf, 9500);
   window.setTimeout(hideWerewolf, 10600);
- 
+
   function showHeadingWelcome() {
     document.getElementById("welcome").style.opacity = "1";
   }
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showContainer() {
-    document.getElementById("container").style.display = 'flex';
+    document.getElementById("container").style.display = "flex";
   }
 
   function fadeInContainer() {
@@ -70,12 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showSurpriceElement() {
-    document.getElementById('audio-control').style.opacity = "1";
-    document.getElementById('werewolf-img').style.display = "block";
+    document.getElementById("audio-control").style.opacity = "1";
+    document.getElementById("werewolf-img").style.display = "block";
   }
 
   function fadeOutWerewolf() {
-    document.getElementById('werewolf-img').style.opacity = "0";
+    document.getElementById("werewolf-img").style.opacity = "0";
   }
 
   function hideWerewolf() {
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nameLabel.className = "block";
 
       const nameInput = document.createElement("input");
-      nameInput.placeholder = 'Enter a name or leave blank'
+      nameInput.placeholder = "Enter a name or leave blank";
       nameInput.id = `character${i}-name`;
       nameInput.type = "text";
       nameInput.className = "form-control";
@@ -214,10 +214,10 @@ document.addEventListener("DOMContentLoaded", () => {
     createCharacterInputs(numCharactersInput.value);
   });
 
-  aboutUsButton.addEventListener('click', () => {
+  aboutUsButton.addEventListener("click", () => {
     goToSection("about-us");
   });
-  
+
   generateStoryButton.addEventListener("click", async () => {
     const spookinessType = spookinessTypeInput.value;
     const numCharacters = parseInt(numCharactersInput.value, 10);
@@ -242,7 +242,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const storyText = await generateStory(prompt);
 
-    generatedStoryDiv.innerText = storyText;
+    // Display the story using the typing effect
+    generatedStoryDiv.innerText = "";
+    typeEffect(generatedStoryDiv, storyText, 50);
+
     goToSection("display-story");
   });
 
@@ -270,6 +273,37 @@ document.addEventListener("DOMContentLoaded", () => {
       return "An error occurred while generating the story. Please try again.";
     }
   }
+  function typeEffect(element, text, delay = 100) {
+    let i = 0;
+    const typingSound = document.getElementById("typing-sound");
+
+    // Play the audio when typing starts
+    typingSound.play();
+
+    const typingInterval = setInterval(function () {
+      if (i < text.length) {
+        // Handle consecutive newlines as a new paragraph
+        if (text.substring(i, i + 2) === "\n\n") {
+          element.innerHTML += "<br><br>";
+          i += 2; // Increment by 2 to skip both newline characters
+        }
+        // Handle single newlines as a line break
+        else if (text.charAt(i) === "\n") {
+          element.innerHTML += "<br>";
+          i++;
+        } else {
+          element.innerHTML += text.charAt(i);
+          i++;
+        }
+      } else {
+        clearInterval(typingInterval); // Stop the interval when all characters are displayed
+        typingSound.pause(); // Pause the audio
+        typingSound.currentTime = 0; // Reset audio to start
+      }
+    }, delay);
+  }
+
+  typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
 
   //   const audio = document.getElementById("myAudio");
   //   const playPauseBtn = document.getElementById("playPauseBtn");
@@ -324,36 +358,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // });
 
   // type effect for story generation
-
-  function typeEffect(element, text, delay = 100) {
-    let i = 0;
-    const typingSound = document.getElementById("typing-sound");
-
-    // Play the audio when typing starts
-    typingSound.play();
-
-    const typingInterval = setInterval(function () {
-      if (i < text.length) {
-        // Handle consecutive newlines as a new paragraph
-        if (text.substring(i, i + 2) === "\n\n") {
-          element.innerHTML += "<br><br>";
-          i += 2; // Increment by 2 to skip both newline characters
-        }
-        // Handle single newlines as a line break
-        else if (text.charAt(i) === "\n") {
-          element.innerHTML += "<br>";
-          i++;
-        } else {
-          element.innerHTML += text.charAt(i);
-          i++;
-        }
-      } else {
-        clearInterval(typingInterval); // Stop the interval when all characters are displayed
-        typingSound.pause(); // Pause the audio
-        typingSound.currentTime = 0; // Reset audio to start
-      }
-    }, delay);
-  }
-
-  typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
 });
