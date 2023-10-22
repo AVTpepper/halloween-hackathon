@@ -131,8 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     userSelection = "yes";
   });
 
-  
-
   ageProceedButton.addEventListener("click", () => {
     const warningText = document.querySelector("#generate-story .warning-text");
 
@@ -157,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Reset the form and go back to landing
   function resetForm() {
     goToSection("landing-section");
-    document.getElementById('creating-story-info').style.opacity = '0';    
+    document.getElementById("creating-story-info").style.opacity = "0";
   }
 
   // Function to create character input fields
@@ -222,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const spookinessType = spookinessTypeInput.value;
     const numCharacters = parseInt(numCharactersInput.value, 10);
 
-    document.getElementById('creating-story-info').style.opacity = '1';
+    document.getElementById("creating-story-info").style.opacity = "1";
 
     const characters = [];
     for (let i = 1; i <= numCharacters; i++) {
@@ -244,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Display the story using the typing effect
     generatedStoryDiv.innerText = "";
-    typeEffect(generatedStoryDiv, storyText, 50);
+    typeEffect(generatedStoryDiv, storyText, 75);
 
     goToSection("display-story");
   });
@@ -273,22 +271,22 @@ document.addEventListener("DOMContentLoaded", () => {
       return "An error occurred while generating the story. Please try again.";
     }
   }
+
   function typeEffect(element, text, delay = 100) {
+    fullStoryText = text; // Store the full text before starting the typing effect
     let i = 0;
     const typingSound = document.getElementById("typing-sound");
 
     // Play the audio when typing starts
     typingSound.play();
 
-    const typingInterval = setInterval(function () {
+    typingInterval = setInterval(function () {
+      // remove the const to make it modify the outer variable
       if (i < text.length) {
-        // Handle consecutive newlines as a new paragraph
         if (text.substring(i, i + 2) === "\n\n") {
           element.innerHTML += "<br><br>";
-          i += 2; // Increment by 2 to skip both newline characters
-        }
-        // Handle single newlines as a line break
-        else if (text.charAt(i) === "\n") {
+          i += 2;
+        } else if (text.charAt(i) === "\n") {
           element.innerHTML += "<br>";
           i++;
         } else {
@@ -296,66 +294,65 @@ document.addEventListener("DOMContentLoaded", () => {
           i++;
         }
       } else {
-        clearInterval(typingInterval); // Stop the interval when all characters are displayed
-        typingSound.pause(); // Pause the audio
-        typingSound.currentTime = 0; // Reset audio to start
+        clearInterval(typingInterval);
+        typingSound.pause();
+        typingSound.currentTime = 0;
       }
     }, delay);
   }
 
   typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
-
-  //   const audio = document.getElementById("myAudio");
-  //   const playPauseBtn = document.getElementById("playPauseBtn");
-  //   const playPauseIcon = document.getElementById("playPauseIcon");
-  //   const muteBtn = document.getElementById("muteBtn");
-  //   const volumeIcon = document.getElementById("volumeIcon");
-  //   const volumeSlider = document.getElementById("volumeSlider");
-
-  //   playPauseBtn.addEventListener("click", () => {
-  //     if (audio.paused) {
-  //       audio.play();
-  //       playPauseIcon.className = "fas fa-pause"; // Change to pause icon
-  //     } else {
-  //       audio.pause();
-  //       playPauseIcon.className = "fas fa-play"; // Change back to play icon
-  //     }
-  //   });
-
-  //   muteBtn.addEventListener("click", () => {
-  //     if (audio.muted) {
-  //       audio.muted = false;
-  //       volumeIcon.className = "fas fa-volume-up"; // Change to volume icon
-  //     } else {
-  //       audio.muted = true;
-  //       volumeIcon.className = "fas fa-volume-mute"; // Change to mute icon
-  //     }
-  //   });
-
-  //   volumeSlider.addEventListener("input", (event) => {
-  //     audio.volume = event.target.value;
-
-  //     // Adjust icon based on volume level
-  //     if (audio.volume === 0 || audio.muted) {
-  //       volumeIcon.className = "fas fa-volume-mute";
-  //     } else {
-  //       volumeIcon.className = "fas fa-volume-up";
-  //     }
-  //   });
-
-  //   // Volume control
-  //   volumeSlider.addEventListener("input", function () {
-  //     audioElement.volume = volumeSlider.value;
-  //   });
-
-  //   // Handle autoplay and loop attributes
-  //   if (audioElement.hasAttribute("autoplay")) {
-  //     audioElement.play();
-  //   }
-  //   if (!audioElement.hasAttribute("loop")) {
-  //     audioElement.removeAttribute("loop");
-  //   }
-  // });
-
-  // type effect for story generation
 });
+
+let typingInterval;
+let fullStoryText = "";
+
+document.getElementById("muteButton").addEventListener("click", function () {
+  let audioElement = document.getElementById("typing-sound");
+  let muteIcon = document.getElementById("muteIcon");
+  let muteText = document.getElementById("muteText");
+
+  if (audioElement.muted) {
+    audioElement.muted = false;
+    muteIcon.className = "fa fa-volume-up";
+    muteText.textContent = "Mute Writing Sound";
+  } else {
+    audioElement.muted = true;
+    muteIcon.className = "fa fa-volume-mute";
+    muteText.textContent = "Unmute Writing Sound";
+  }
+});
+
+document
+  .getElementById("showFullStoryButton")
+  .addEventListener("click", function () {
+    let storyElement = document.getElementById("generated-story");
+    clearInterval(typingInterval);
+    let typingSound = document.getElementById("typing-sound");
+    typingSound.pause();
+    typingSound.currentTime = 0;
+
+    // Format the text to respect paragraphs and new lines
+    let formattedText = fullStoryText
+      .replace(/\n\n/g, "<br><br>") // Replace double newlines with two line breaks
+      .replace(/\n/g, "<br>"); // Replace single newlines with one line break
+
+    storyElement.innerHTML = formattedText;
+  });
+
+document
+  .getElementById("start-over-button")
+  .addEventListener("click", function () {
+    let typingSound = document.getElementById("typing-sound");
+    let storyElement = document.getElementById("generated-story");
+
+    // Stop the typing sound
+    typingSound.pause();
+    typingSound.currentTime = 0;
+
+    // Clear the typing interval
+    clearInterval(typingInterval);
+
+    // Clear the content in the story div
+    storyElement.innerHTML = "";
+  });
