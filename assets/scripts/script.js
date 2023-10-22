@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const ageProceedButton = document.getElementById("age-proceed-button");
   const noButton = document.getElementById("no-button");
   const yesButton = document.getElementById("yes-button");
-  const aboutUsButton = document.getElementById("about-us-button")
+  const aboutUsButton = document.getElementById("about-us-button");
+  const backButton = document.getElementById("back-button");
+  const retryButton = document.getElementById("retry-button");
   const generatedStoryDiv = document.getElementById("generated-story");
 
 
@@ -115,6 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ageProceedButton.addEventListener("click", () => {
     goToSection("generate-story");
   });
+  // For the back button on the about section
+  backButton.addEventListener('click', () => {
+    goToSection("display-story");
+  });
+  retryButton.addEventListener('click', resetForm);
+
   let userSelection = null; // this variable will store the user's choice
   noButton.addEventListener("click", function () {
     userSelection = "no";
