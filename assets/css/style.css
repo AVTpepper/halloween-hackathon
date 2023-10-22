@@ -96,6 +96,12 @@ img {
   animation-duration: 0.2s;
 }
 
+/* pumpkin animation */
+.hide {
+  display: none;
+}
+
+
 /* --------------------------
 ------- Layout styles -------
 -------------------------- */
