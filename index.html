@@ -14,8 +14,16 @@
 </head>
 
 <body>
+    
     <div id="bg-image" class="container d-flex justify-content-center align-items-center min-vh-100">
+        
         <div class="col-10 col-md-9 col-lg-6 m-4">
+            <div id="welcome-headings" class="text-center">
+                <h1 id="welcome" class="mb-0">Welcome</h1>
+                <h1 id="welcome-to">to</h1>
+                <h1 id="spooky-story-creation">Spooky story<br>creation</h1>
+            </div>
+            <img id="werewolf-img" src="assets\images\werewolf-8070653.png" alt="Image of werewolf">
             <div id="container" class="borders rounded bg-purple">
                 <div>
                     <h2 class="text-center mt-3 mb-2">Spooky Story</h2>
@@ -156,9 +164,50 @@
                 <!--About Us Section-->
                 <div id="about-us" class="section d-none">
                     <div class="squared-circle text-center mb-3">
-                        <h3 class="mb-0">This is us</h3>
+                        <h3 class="mb-0">Thank you for trying out our scary story generator! <br> This is us:</h3>
                     </div>
                     <div id="about-us-section" class="story-output mt-1 mb-3 px-4">
+                        <img src="./assets/images/Alex.jpg" width="150" height="150" class="image img-fluid rounded mx-auto d-block" alt="...">
+                        <p class="text-center">
+                            Alex
+                            <a href="https://github.com/AVTpepper" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            /
+                            <a href="https://www.linkedin.com/in/alexander-tastad/" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </p>
+                        <img src="./assets/images/Sara.jpg" width="150" height="150" class="imgage img-fluid rounded mx-auto d-block" alt="...">
+                        <p class="text-center">
+                            Sara
+                            <a href="https://github.com/sbojorge" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>/
+                            <a href="https://www.linkedin.com/in/sara-bojorge-66343715b/" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </p>
+                        <img src="./assets/images/sam.jpg" width="150" height="150" class="image img-fluid rounded mx-auto d-block" alt="...">
+                        <p class="text-center">
+                            Samuel
+                            <a href="https://github.com/FullstackSammy" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>/
+                            <a href="https://www.linkedin.com/in/samuel-n%C3%A4sstr%C3%B6m-15563620a/" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </p>
+                        <img src="./assets/images/Niclas.jpg" width="150" height="150" class="image img-fluid rounded mx-auto d-block" alt="...">
+                        <p class="text-center">
+                            Niclas
+                            <a href="https://github.com/NiclO1337" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>/
+                            <a href="https://www.linkedin.com/in/niclas-hugdahl-ivmark-236716a1/" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </p>
                         <img src="./assets/images/Alex.jpg" width="150" height="150"
                             class="img-fluid rounded mx-auto d-block" alt="...">
                         <img src="./assets/images/Sara.jpg" width="150" height="150"
@@ -169,7 +218,8 @@
                             class="img-fluid rounded mx-auto d-block" alt="...">
                     </div>
                     <div class="text-center">
-                        <button id="start-over-button" class="consistent-btn btn btn-secondary mb-4">Start Over</button>
+                        <button id="back-button" class="consistent-btn btn btn-secondary mb-4">Back</button>
+                        <button id="retry-button" class="consistent-btn consistent-btn btn btn-secondary mb-4">Start Over</button>
                     </div>
                 </div>
                 <!-- <div class="row py-4 w-50 mx-auto">
@@ -183,7 +233,7 @@
                     <input type="range" class="audio-volume-slider" id="volumeSlider" min="0" max="1" step="0.1"
                         value="1">
                 </div> -->
-
+                
             </div>
             <div class="row py-4 w-50 mx-auto">
                 <audio controls loop>
@@ -193,7 +243,7 @@
                 </audio>
             </div>
         </div>
-
+        
     </div>
     <audio id="typing-sound" preload="auto" loop>
         <source src="./assets/sounds/pencil-29272.mp3" type="audio/mpeg">
