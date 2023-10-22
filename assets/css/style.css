@@ -19,7 +19,7 @@
 -------------------------- */
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 * {
@@ -67,19 +67,21 @@ audio::-webkit-media-controls-time-remaining-display {
 
 /* about us IMAGES */
 
-.fa-github, .fa-linkedin {
-    color: #ff6600;
+.fa-github,
+.fa-linkedin {
+  color: #ff6600;
 }
-  
-.fa-github:hover, .fa-linkedin:hover {
-    color: #eee;
+
+.fa-github:hover,
+.fa-linkedin:hover {
+  color: #eee;
 }
 
 img {
-    margin: 5px;
-    animation-name: hero-zoom;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+  margin: 5px;
+  animation-name: hero-zoom;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 #werewolf-img {
@@ -88,8 +90,9 @@ img {
   right: 0;
   z-index: 99;
   height: 70%;
+  width: auto;
   display: none;
-  transition: opacity 1.5s;  
+  transition: opacity 1.5s;
   animation-duration: 0.2s;
 }
 
@@ -233,7 +236,9 @@ img {
 /* Add any specific styles for the volume slider here */
 /* } */
 
-/* Media queries */
+/* --------------------------
+------- Media queries -------
+-------------------------- */
 
 /* Small screens until 600px */
 @media screen and (max-width: 490px) {
@@ -242,10 +247,10 @@ img {
     background-size: cover;
   }
 
-img {
+  img {
     width: 80px;
     height: 80px;
-}
+  }
 }
 
 @media (min-width: 474px) and (max-width: 767px) {
@@ -256,7 +261,20 @@ img {
 
 @media screen and (min-width: 768px) {
   #werewolf-img {
-    right: 25%;
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #werewolf-img {
+    right: 15%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #werewolf-img {
+    right: 20%;
     height: 100%;
   }
 }
