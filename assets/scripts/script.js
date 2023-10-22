@@ -299,58 +299,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   typingSound.volume = 0.5; // 0.5 is 50% volume (range is 0 to 1)
-
-  //   const audio = document.getElementById("myAudio");
-  //   const playPauseBtn = document.getElementById("playPauseBtn");
-  //   const playPauseIcon = document.getElementById("playPauseIcon");
-  //   const muteBtn = document.getElementById("muteBtn");
-  //   const volumeIcon = document.getElementById("volumeIcon");
-  //   const volumeSlider = document.getElementById("volumeSlider");
-
-  //   playPauseBtn.addEventListener("click", () => {
-  //     if (audio.paused) {
-  //       audio.play();
-  //       playPauseIcon.className = "fas fa-pause"; // Change to pause icon
-  //     } else {
-  //       audio.pause();
-  //       playPauseIcon.className = "fas fa-play"; // Change back to play icon
-  //     }
-  //   });
-
-  //   muteBtn.addEventListener("click", () => {
-  //     if (audio.muted) {
-  //       audio.muted = false;
-  //       volumeIcon.className = "fas fa-volume-up"; // Change to volume icon
-  //     } else {
-  //       audio.muted = true;
-  //       volumeIcon.className = "fas fa-volume-mute"; // Change to mute icon
-  //     }
-  //   });
-
-  //   volumeSlider.addEventListener("input", (event) => {
-  //     audio.volume = event.target.value;
-
-  //     // Adjust icon based on volume level
-  //     if (audio.volume === 0 || audio.muted) {
-  //       volumeIcon.className = "fas fa-volume-mute";
-  //     } else {
-  //       volumeIcon.className = "fas fa-volume-up";
-  //     }
-  //   });
-
-  //   // Volume control
-  //   volumeSlider.addEventListener("input", function () {
-  //     audioElement.volume = volumeSlider.value;
-  //   });
-
-  //   // Handle autoplay and loop attributes
-  //   if (audioElement.hasAttribute("autoplay")) {
-  //     audioElement.play();
-  //   }
-  //   if (!audioElement.hasAttribute("loop")) {
-  //     audioElement.removeAttribute("loop");
-  //   }
-  // });
-
-  // type effect for story generation
 });
+
+document.getElementById("muteButton").addEventListener("click", function () {
+  let audioElement = document.getElementById("typing-sound");
+  if (audioElement.muted) {
+    audioElement.muted = false;
+    // Optionally, change the icon to unmuted version here.
+  } else {
+    audioElement.muted = true;
+    // Optionally, change the icon to muted version here.
+  }
+});
+document
+  .getElementById("showFullStoryButton")
+  .addEventListener("click", function () {
+    // Assuming your story content is in an element with the ID "storyContent"
+    let storyElement = document.getElementById("storyContent");
+
+    // Disable any typewriter or progressive display effect you have here.
+
+    storyElement.textContent = "Your entire story text here.";
+  });

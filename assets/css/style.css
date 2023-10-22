@@ -230,6 +230,12 @@ img {
   margin-right: 10px;
 }
 
+#muteButton .fas {
+    font-size: 20px;  /* adjust as needed */
+    color: gray;      /* adjust as needed */
+    margin-right: 5px; /* spacing between the icon and the text */
+}
+
 /* Style for the volume slider, if needed */
 /* .audio-volume-slider { */
 /* Add any specific styles for the volume slider here */
