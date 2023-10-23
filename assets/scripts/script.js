@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Play the audio when typing starts
     typingSound.play();
-    
+    typingSound.volume = 0.3;    
 
     typingInterval = setInterval(function () {
       // remove the const to make it modify the outer variable
@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
         typingSound.currentTime = 0;
       }
     }, delay);
-  }
+  }  
 });
 
 let typingInterval;
