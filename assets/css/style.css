@@ -14,7 +14,7 @@ a {
 }
 
 body {
-    background: url("../images/park-anthropomorphic-jack-o-lantern.webp") center fixed;
+    background: url("../images/backgrounds/picture_1.webp") center fixed;
     background-color: #d2cbe3;
     background-size: cover;
     -webkit-background-size: cover;
@@ -281,7 +281,7 @@ img {
 /* Small screens until 600px */
 @media screen and (max-width: 490px) {
     body {
-        background: url("../images/moon-outdoors-pumpkin.webp") bottom right fixed;
+        background: url("../images/backgrounds/picture_2.webp") bottom right fixed;
         background-size: cover;
     }
 
