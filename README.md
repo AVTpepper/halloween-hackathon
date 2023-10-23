@@ -4,14 +4,13 @@
 
 Link to live website: [Spooky story creation](https://avtpepper.github.io/halloween-hackathon/)
 
-<hr>
-
-## Table of contents
 
 
 
 
-<hr>
+
+
+
 
 ## Introduction
 
@@ -33,44 +32,67 @@ Designed to immerse the user in a spooky environment with visual effects and sou
 Playful scary images used and strong colour pallet is chosen.
 
 #### Initial wireframe sketches
-<p align="left"><img src="assets\images\story-creation-desktop-wireframe.jpg" alt="Example of our Github projects board during development" width="500"/></p>
+The wireframes of this project are (important: the final project may be slightly different):
+<p align="left"><img src="assets\images\design\picture_1.jpg" alt="Example of our Github projects board during development" width="500"/></p>
 
-## Features
+#### Colour palette
+We agreed in using standard colours of Halloween celebration. They can be found all over the project from the images to the styling of elements:
+<p align="left"><img src="assets\images\design\picture_2.jpg" alt="colour palette agreed for the project" width="500"/></p>
+
+#### Typography
+Fonts were selected from Google Fonts and they stick to the theme of this project.<br>
+The Creepster font gives the tone for presenting the website and the main sections:
+<p align="left"><img src="assets\images\design\picture_3.png" alt="creepster font" width="500"/></p>
+The Arvo font is elegant and clear for the user to understand the blocks of text:<br>
+<br>
+<p align="left"><img src="assets\images\design\picture_4.png" alt="arvo font" width="500"/></p>
+
+#### Favicon
+With the intention of keeping the spirit of Halloween, a favicon has been integrated:
+<p align="left"><img src="assets\images\design\picture_5.png" alt="generated favicon" width="500"/></p>
+
+## Existing features
 
 ### Introduction animation
 To immediatly set the appropriate tone, user is introduced to the website with spooky animations. Starting with smooth calm transitions to lure the user into a false sense of security and then followed by a startling surprise.
 
-<p align="left"><img src="" alt="Picture of introduction animation" width="500"/></p>
+<p align="left"><img src="assets\images\features\picture_1.png" alt="Picture of introduction animation" width="500"/></p>
 
 ### Introduction page
 
 The introduction page is where the user introduced to the story creator and can begin their journey.
 
-<p align="left"><img src="" alt="Picture of introduction page" width="500"/></p>
+<p align="left"><img src="assets\images\features\picture_2.png" alt="Picture of introduction page" width="500"/></p>
 
 ### User choices
 
 User has multiple options to choose from along the way that affects the generated story.
 
-<p align="left"><img src="" alt="Picture of user choice page" width="500"/></p>
+<p align="left"><img src="assets\images\features\picture_3.png" alt="Picture of user choice page" width="500"/></p>
+
+<p align="left"><img src="assets\images\features\picture_4.png" alt="Picture of user choice page" width="500"/></p>
+
+<p align="left"><img src="assets\images\features\picture_5.png" alt="Picture of user choice page" width="500"/></p>
 
 ### Generate story
 
 After all decisions have been made a story is generated, it is displayed with animations and sound for a great reading experience.
 
-<p align="left"><img src="" alt="Picture of generated story" width="500"/></p>
+<p align="left"><img src="assets\images\features\picture_6.png" alt="Picture of generated story" width="500"/></p>
 
 ### About us page
 
 Here user is thanked for visit the page and get to meet the creators.
 
-<p align="left"><img src="" alt="Picture of About us page" width="500"/></p>
+<p align="left"><img src="assets\images\features\picture_7.png" alt="Picture of About us page" width="500"/></p>
 
 
 ## Features left to implement
 
 - Having the choice to read story with TTS (text to speech) for users with disabilities.
 - Form validation to check that user enters a name and selects age option.
+- Better transitions and more scary animations.
+- Enable user to handle (play/mute) audio before opening sequence.
 
 
 ## Testing
@@ -89,13 +111,7 @@ Here user is thanked for visit the page and get to meet the creators.
 | About us | Option to display about us page after story is finished | Wait for story to finish and click on "About us" | Displays about us page | Pass |
 
 
-## Bugs
 
-### Fixed bugs
-
-
-### Unfixed bugs
-- None
 
 
 ## Technologies used
@@ -136,7 +152,8 @@ Audio element styling inspired from: [Shahed Nasser's blog](https://blog.shahedn
 
 #### Images
 
-Werewolf image by <a href="https://pixabay.com/illustrations/werewolf-wolf-fantasia-horror-dark-8070653/">Sabrina Belle</a>
+- Werewolf image by <a href="https://pixabay.com/illustrations/werewolf-wolf-fantasia-horror-dark-8070653/">Sabrina Belle</a>
+- Background images and favicon image come from [rawpixel](https://www.rawpixel.com/)
 
 
 
