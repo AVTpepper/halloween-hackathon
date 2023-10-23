@@ -1,18 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Arvo&family=Creepster&display=swap");
 
-/* --------------------------
---------- Animations --------
--------------------------- */
-
-@keyframes hero-zoom {
-    from {
-        transform: scale(0.7);
-    }
-
-    to {
-        transform: scale(1);
-    }
-}
 
 /* --------------------------
 ------- Global styles -------
@@ -27,7 +14,6 @@ a {
 }
 
 body {
-    /* min-height: 100vh; */
     background: url("../images/park-anthropomorphic-jack-o-lantern.webp") center fixed;
     background-color: #d2cbe3;
     background-size: cover;
@@ -49,7 +35,12 @@ h1 {
     font-size: 450%;
 }
 
-/* Media */
+
+/* --------------------------
+----------- Media -----------
+-------------------------- */
+
+/* Audio */
 audio {
     width: 250px;
     height: 35px;
@@ -64,8 +55,12 @@ audio::-webkit-media-controls-time-remaining-display {
     color: #fff;
 }
 
-/* about us IMAGES */
+#audio-control {
+    opacity: 0;
+    /* opacity added with JavaScript in opening sequence timers */
+}
 
+/* Images */
 .fa-github,
 .fa-linkedin {
     color: #ff6600;
@@ -95,36 +90,36 @@ img {
     animation-duration: 0.2s;
 }
 
+/* --------------------------
+--------- Animations --------
+-------------------------- */
+
+@keyframes hero-zoom {
+    from {
+        transform: scale(0.7);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 /* pumpkin animation */
 .hide {
     display: none;
 }
 
-
-/* --------------------------
-------- Layout styles -------
--------------------------- */
-
-/* #bg-image {
-  background-image: url('../images/halloween-2837936_1920.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center center;  
-  transition: background-size 1.8s;
-} */
-
-#welcome-headings {
-    color: rgb(12, 9, 14);
-    text-shadow: 0 0 10px orange;
-    transition: opacity 1.2s;
-}
-
-#welcome,
-#welcome-to,
-#spooky-story-creation {
-    opacity: 0;
-}
-
+/* Fading effects for transitions */
 #welcome {
     transition: opacity 1.5s;
 }
@@ -137,6 +132,41 @@ img {
     transition: opacity 0.7s;
 }
 
+#creating-story-info {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#generate-story {
+    transition: opacity 2s;
+    /* 2 seconds fade duration */
+}
+
+.fade-out {
+    animation-name: fade;
+    animation-timing-function: ease-in;
+    animation-duration: 6s;
+    /* This is a 3-second fade. Adjust as needed. */
+    animation-fill-mode: forwards;
+}
+
+/* --------------------------
+------- Layout styles -------
+-------------------------- */
+
+#welcome-headings {
+    color: rgb(12, 9, 14);
+    text-shadow: 0 0 10px orange;
+    transition: opacity 1.2s;
+}
+
+#welcome,
+#welcome-to,
+#spooky-story-creation {
+    opacity: 0;
+    /* opacity added with JavaScript in opening sequence timers */
+}
+
 #container {
     background-color: rgba(9, 7, 10, 0.8);
     padding-top: 10px;
@@ -146,16 +176,15 @@ img {
     animation-fill-mode: forwards;
     min-height: 400px;
     opacity: 0;
-    /* if you want it to be initially invisible, otherwise set to 1 */
+    /* opacity added with JavaScript in opening sequence timers */
     transition: opacity 2s;
     display: none;
-    /* if you want it to be initially hidden, otherwise remove */
+    /* display: flex; added with JavaScript on timer */
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
     height: 100%;
 }
-
 
 .btn-container {
     margin-top: auto;
@@ -168,23 +197,14 @@ img {
 
 .borders {
     border: solid 5px;
-    border-top-left-radius: 15rem 5rem;
-    border-top-right-radius: 15rem 5rem;
+    border-top-left-radius: 50% 5rem;
+    border-top-right-radius: 50% 5rem;
     box-shadow: 5px 5px 59px rgb(255, 165, 0);
 }
 
 #header-seperator {
     height: 0.3rem;
     opacity: 1;
-}
-
-#audio-control {
-    opacity: 0;
-}
-
-#creating-story-info {
-    opacity: 0;
-    transition: opacity 1s;
 }
 
 /* --------------------------
@@ -203,7 +223,6 @@ img {
     background-color: rgb(255, 102, 0);
     border-color: rgb(255, 102, 0);
     color: #000;
-
 }
 
 /* Button hover effect */
@@ -215,7 +234,6 @@ img {
     border-color: #000;
     color: rgb(255, 102, 0);
     box-shadow: 0px 0px 20px rgb(255, 165, 0);
-
 }
 
 /* Age Verification button styles */
@@ -240,7 +258,6 @@ img {
 .generate-btn:active,
 #muteButton:focus,
 #muteButton:active {
-
     background-color: rgba(9, 7, 10, 0.5);
     border-color: #000;
     color: rgb(255, 102, 0);
@@ -272,20 +289,28 @@ img {
         width: 80px;
         height: 80px;
     }
+
+    .borders {
+        border-top-left-radius: 50% 3rem;
+        border-top-right-radius: 50% 3rem;
+    }
 }
 
+/* Between screen sizes 474px and 767px */
 @media (min-width: 474px) and (max-width: 767px) {
     #reset-button {
         margin-top: 0 !important;
     }
 }
 
+/* Media query for 768px, tablets and above */
 @media screen and (min-width: 768px) {
     #werewolf-img {
         height: 80%;
     }
 }
 
+/* Media query for 1200px, laptops and bigger */
 @media screen and (min-width: 1200px) {
     #werewolf-img {
         right: 15%;
@@ -293,33 +318,10 @@ img {
     }
 }
 
+/* Media query for 1600px, laptops and bigger */
 @media screen and (min-width: 1600px) {
     #werewolf-img {
         right: 20%;
         height: 100%;
-    }
-}
-
-
-#generate-story {
-    transition: opacity 2s;
-    /* 2 seconds fade duration */
-}
-
-.fade-out {
-    animation-name: fade;
-    animation-timing-function: ease-in;
-    animation-duration: 6s;
-    /* This is a 3-second fade. Adjust as needed. */
-    animation-fill-mode: forwards;
-}
-
-@keyframes fade {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
     }
 }
