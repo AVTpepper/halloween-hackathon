@@ -82,16 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("werewolf-img").style.display = "none";
   }
 
-  // function to popup the pumpkin for only 2 seconds
-  const show = (event) => {
-    console.log(event);
-    document.getElementById("tryme").style.display = "block";
-    window.setTimeout(
-      "document.getElementById('tryme').style.display = 'none';",
-      2000
-    );
-  };
-
+  
   // EVENT LISTENERS
 
   // For the Start Over button on Display Story
@@ -102,8 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
   startButton.addEventListener("click", () => {
     goToSection("story-foundation");
   });
-  // eventlistener for popping up the pumpkin
-  startButton.addEventListener("click", show);
   // For the Next button on Story Foundation
   foundationNextButton.addEventListener("click", () => {
     goToSection("character-generation");
@@ -156,6 +145,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function resetForm() {
     goToSection("landing-section");
     document.getElementById("creating-story-info").style.opacity = "0";
+    document.getElementById("generate-story").style.opacity = "1";
+    document.getElementById("generate-story").style.display = 'block';
+    document.getElementById("generate-story").classList.remove('fade-out');
   }
 
   // Function to create character input fields
@@ -288,6 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Play the audio when typing starts
     typingSound.play();
+    
 
     typingInterval = setInterval(function () {
       // remove the const to make it modify the outer variable
