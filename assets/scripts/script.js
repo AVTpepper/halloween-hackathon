@@ -156,6 +156,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function resetForm() {
     goToSection("landing-section");
     document.getElementById("creating-story-info").style.opacity = "0";
+    document.getElementById("generate-story").style.opacity = "1";
+    document.getElementById("generate-story").style.display = 'block';
+    document.getElementById("generate-story").classList.remove('fade-out');
   }
 
   // Function to create character input fields
