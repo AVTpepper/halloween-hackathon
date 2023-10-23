@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const sexSelect = document.createElement("select");
       sexSelect.id = `character${i}-sex`;
-      sexSelect.className = "form-control";
+      sexSelect.className = "form-select";
 
       const maleOption = document.createElement("option");
       maleOption.value = "male";
