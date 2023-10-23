@@ -5,13 +5,6 @@
 Link to live website: [Spooky story creation](https://avtpepper.github.io/halloween-hackathon/)
 
 
-
-
-
-
-
-
-
 ## Introduction
 
 **Spooky story creation**
@@ -82,7 +75,7 @@ After all decisions have been made a story is generated, it is displayed with an
 
 ### About us page
 
-Here user is thanked for visit the page and get to meet the creators.
+Here user is thanked for visiting the page and get to meet the creators.
 
 <p align="left"><img src="assets\images\features\picture_7.png" alt="Picture of About us page" width="500"/></p>
 
@@ -97,13 +90,31 @@ Here user is thanked for visit the page and get to meet the creators.
 
 ## Testing
 
+### Automatic testing
+
+- HTML
+Validated through https://validator.w3.org/#validate_by_input and passed
+    <p align="left"><img src="assets\images\html-validator-pass.jpg" alt="Picture of Lighthouse testing results" width="400"/></p>
+
+- CSS
+Validated through https://jigsaw.w3.org/css-validator/validator and passed
+    <p align="left"><img src="assets\images\css-validator-pass.jpg" alt="Picture of Lighthouse testing results" width="400"/></p>
+
+- Lighthouse testing
+Used lighthouse to test performance, accessibility, best practices, and search engine optimization of the website. 
+
+    <p align="left"><img src="assets\images\lighthouse-testing.jpg" alt="Picture of Lighthouse testing results" width="250"/></p>
+
+
+### Manual testing
+
 | Feature tested | Expected outcome | Testing Performed | Result | Pass / fail | 
 | --- | --- | --- | --- | --- |
 | **Introduction screen** |
 | Introduction animation | Show animations after page is loaded | Load page | Animations show correctly | Pass |
 | Introduction screen | Display introduction screen | Load page and wait for animations to finish | Introduction screen is displayed | Pass |
 | **Story creation** |
-| User choices | Story changes based on user input | Make choices and generate story | Story matching input choices is displayed | Pass |
+| User choices | Story changes based on user input | Make choices and generate story | Generated story matches the choices from user input | Pass |
 | **Story screen** |
 | Generate story | Create a story | Click on "Generate story" | Creates a story | Pass |
 | Story anymation | Display story slowly and play sounds | Click on "Generate story" and wait | A story is created and animates slowly while sound is playing | Pass |
@@ -111,7 +122,24 @@ Here user is thanked for visit the page and get to meet the creators.
 | About us | Option to display about us page after story is finished | Wait for story to finish and click on "About us" | Displays about us page | Pass |
 
 
+## Bugs
 
+### Solved bugs
+
+A large number of scary bugs was accidentally created during development and had to be fixed.
+Fixes included:
+- communicating with team members
+- looking in chrome developer tools to check for warning messages
+- looking through code line by line
+- using console.log(); to see what was acctually going on
+- review commit history
+- search google for possible solutions
+- a lot of trial and error
+
+
+### Unfixed bugs
+
+On rare occations the story is not generated. We can not find any logical reason for this. 
 
 
 ## Technologies used
