@@ -86,10 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const show = (event) => {
     console.log(event);
     document.getElementById("tryme").style.display = "block";
-    window.setTimeout(
-      "document.getElementById('tryme').style.display = 'none';",
-      2000
-    );
+    window.setTimeout( () => {
+      document.getElementById('tryme').style.display = 'none';
+    }, 2000);
   };
 
   // EVENT LISTENERS
@@ -291,6 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Play the audio when typing starts
     typingSound.play();
+    
 
     typingInterval = setInterval(function () {
       // remove the const to make it modify the outer variable
@@ -312,8 +312,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, delay);
   }
-
-  typingSound.volume = 0.3; // 0.5 is 50% volume (range is 0 to 1)
 });
 
 let typingInterval;
