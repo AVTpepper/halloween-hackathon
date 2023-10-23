@@ -114,10 +114,7 @@ img {
     }
 }
 
-/* pumpkin animation */
-.hide {
-    display: none;
-}
+
 
 /* Fading effects for transitions */
 #welcome {
@@ -192,7 +189,6 @@ img {
 
 .consistent-btn {
     width: 150px;
-    /* Or whatever width you find appropriate */
 }
 
 .borders {
