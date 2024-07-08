@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /*Instead of hardcoding the API key directly into your JavaScript code, 
   you can obfuscate it by using techniques like encoding or splitting the key. 
   For instance, you can store the API key in pieces and then combine them at runtime. */
-  const part1 = "sk-Rsx0wYVCbTOclMMitntQT3B";
-  const part2 = "lbkFJl1s7nH872Fr01UG149UD";
+  const part1 = "";
+  const part2 = "";
   const apiKey = part1 + part2;
 
   const spookinessTypeInput = document.getElementById("spookiness-type");
